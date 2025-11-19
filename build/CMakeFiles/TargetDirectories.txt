@@ -1,0 +1,6 @@
+/home/zav/Projects/http_cs/build/CMakeFiles/net.dir
+/home/zav/Projects/http_cs/build/CMakeFiles/http.dir
+/home/zav/Projects/http_cs/build/CMakeFiles/http_server.dir
+/home/zav/Projects/http_cs/build/CMakeFiles/http_client_main.dir
+/home/zav/Projects/http_cs/build/CMakeFiles/edit_cache.dir
+/home/zav/Projects/http_cs/build/CMakeFiles/rebuild_cache.dir

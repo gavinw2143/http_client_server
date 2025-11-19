@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/zav/Projects/http_cs/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
