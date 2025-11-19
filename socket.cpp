@@ -50,7 +50,6 @@ void Socket::connect_v4(const std::string& ip, uint16_t port) {
     addr.sin_family = AF_INET;
     addr.sin_port = htons(port);
 
-    // inet_pton available on Windows thru <ws2tcpip.h>
     if (::inet_pton(AF_INET, ip.c_str(), &addr.sin_addr) <= 0) {
         throw std::runtime_error("inet_pton failed for IP: " + ip);
     }
