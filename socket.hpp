@@ -7,7 +7,6 @@ namespace net {
 class Socket {
 public:
     Socket() noexcept;
-    explicit Socket(SocketHandle handle) noexcept;
 
     ~Socket();
 
@@ -41,6 +40,10 @@ public:
 
 private:
     SocketHandle handle_;
+
+    explicit Socket(SocketHandle h) noexcept : handle_(h) {}
+
+    friend Socket connect_tcp(const std::string&, const std::string&);
 };
 
 } // namespace net

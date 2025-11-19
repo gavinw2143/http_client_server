@@ -11,9 +11,6 @@ namespace net {
 Socket::Socket() noexcept
     : handle_(INVALID_SOCKET_HANDLE) {}
 
-Socket::Socket(SocketHandle handle) noexcept
-    : handle_(handle) {}
-
 Socket::~Socket() {
     reset();
 }
