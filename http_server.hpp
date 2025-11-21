@@ -1,9 +1,7 @@
-// http_server.hpp
 #pragma once
 
 #include <cstdint>
 #include "socket.hpp"
-#include "http_message.hpp"
 
 namespace net_server {
 

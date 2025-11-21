@@ -26,6 +26,6 @@ struct SocketSystem {
   ~SocketSystem();
 };
 
-int close_socket(SocketHandle sock);
+int close_socket(SocketHandle s);
 
 }
