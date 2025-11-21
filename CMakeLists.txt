@@ -100,6 +100,7 @@ target_link_libraries(http_client_main
 # --------------------------------------------------------------------
 add_executable(http_tests
     tests/http_message_tests.cpp
+    tests/http_server_tests.cpp
 )
 
 target_link_libraries(http_tests

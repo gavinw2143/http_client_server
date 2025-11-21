@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/zav/Projects/http_cs/tests/http_message_tests.cpp" "CMakeFiles/http_tests.dir/tests/http_message_tests.cpp.o" "gcc" "CMakeFiles/http_tests.dir/tests/http_message_tests.cpp.o.d"
+  "/home/zav/Projects/http_cs/tests/http_server_tests.cpp" "CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o" "gcc" "CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o.d"
   "" "http_tests" "gcc" "CMakeFiles/http_tests.dir/link.d"
   )
 

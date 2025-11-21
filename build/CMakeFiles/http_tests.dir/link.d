@@ -3,6 +3,7 @@ http_tests: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o \
   CMakeFiles/http_tests.dir/tests/http_message_tests.cpp.o \
+  CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o \
   libhttp.a \
   lib/libgtest.a \
   lib/libgtest_main.a \
@@ -43,6 +44,8 @@ http_tests: \
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o:
 
 CMakeFiles/http_tests.dir/tests/http_message_tests.cpp.o:
+
+CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o:
 
 libhttp.a:
 

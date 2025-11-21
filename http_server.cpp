@@ -1,6 +1,36 @@
 #include <iostream>
 #include <fstream>
+#include <thread>
+#include <chrono>
 #include "http_server.hpp"
+
+void net_server::run_http_server(uint16_t port) {
+    net::Socket listener = net::Socket::tcp_v4();
+    listener.bind_v4_any(port);
+    listener.listen();
+
+    std::cout << "Listening on port " << port << "...\n";
+
+    for (;;) {
+        std::cout << "Waiting for connection...\n";
+        net::Socket client = listener.accept();
+        std::cout << "Accepted connection!\n";
+
+        // Spawn a thread to handle this client
+        std::thread t(
+            [](net::Socket c) {
+                try {
+                    net_server::handle_client(std::move(c));
+                } catch (const std::exception& ex) {
+                    std::cerr << "[http] client handler threw: " << ex.what() << "\n";
+                }
+            },
+            std::move(client)   // move the socket into the thread
+        );
+
+        t.detach(); // we don’t join; thread cleans up itself when done
+    }
+}
 
 void net_server::handle_client(net::Socket client) {
     std::string raw;
@@ -23,7 +53,25 @@ void net_server::handle_client(net::Socket client) {
         }
     }
     if (header_end == std::string::npos) {
-        // never saw end-of-headers → malformed / too large / etc
+        if (raw.empty()) {
+            // Client connected and closed without sending anything
+            return;
+        }
+
+        // Client sent something but never completed headers -> 400
+        HttpResponse res;
+        res.status_code = 400;
+        res.reason = "Bad Request";
+        res.body = "Bad Request (no header terminator)\n";
+
+        res.set_header("Content-Type", "text/plain");
+        res.set_header("Content-Length", std::to_string(res.body.size()));
+        res.set_header("Connection", "close");
+
+        std::string response_str = serialize_http_response(res);
+        client.send_all(response_str.data(), response_str.size());
+
+        std::cout << "[http] INCOMPLETE_HEADERS -> 400 Bad Request\n";
         return;
     }
 
@@ -31,7 +79,26 @@ void net_server::handle_client(net::Socket client) {
     std::string error;
     std::string head = raw.substr(0, header_end);
     if (!parse_http_request(head, req, &error)) {
+        HttpResponse res;
+        res.status_code = 400;
+        res.reason = "Bad Request";
+        res.body = error + '\n';
+
+        res.set_header("Content-Type", "text/plain");
+        res.set_header("Content-Length", std::to_string(res.body.size()));
+        res.set_header("Connection", "close");
+
+        std::string response_str = serialize_http_response(res);
+        client.send_all(response_str.data(), response_str.size());
+
+        std::cout << "[http] PARSE_ERROR -> 400 Bad Request: " << error << "\n";
+
         return;
+    }
+
+    if (req.target == "/slow") {
+        std::cout << "[http] /slow handler sleeping...\n";
+        std::this_thread::sleep_for(std::chrono::seconds(3));
     }
 
     std::size_t content_length = 0;
@@ -61,16 +128,20 @@ void net_server::handle_client(net::Socket client) {
     HttpResponse res;
 
     if (req.method == "GET") {
-        // try static files
-        if (!serve_static("./www", req, res)) {
-            // temp fallback
-            if (req.target == "/hello") {
-                res.body = "Hello endpoint\n";
-            } else {
-                res.status_code = 404;
-                res.reason = "Not Found";
-                res.body = "404 Not Found\n";
-            }
+        if (req.target == "/hello") {
+            // dynamic route
+            res.status_code = 200;
+            res.reason = "OK";
+            res.body = "Hello endpoint\n";
+        } else if (req.target == "/slow") {
+            res.body = "Slow endpoint\n";
+        } else if (net_server::serve_static("./www", req, res)) {
+            // static handler already set res (200 / 400)
+        } else {
+            // no dynamic route, no static file -> 404
+            res.status_code = 404;
+            res.reason = "Not Found";
+            res.body = "404 Not Found\n";
         }
     }
     else if (req.method == "POST") {
@@ -88,39 +159,21 @@ void net_server::handle_client(net::Socket client) {
         res.body = "Only GET and POST supported\n";
     }
 
-
-    res.set_header("Content-Type", "text/plain");
     res.set_header("Content-Length", std::to_string(res.body.size()));
     res.set_header("Connection", "close");
 
+    std::cout << "[http] " << req.method << " " << req.target
+        << " -> " << res.status_code << " " << res.reason << "\n";
+
     std::string response_str = serialize_http_response(res);
     client.send_all(response_str.data(), response_str.size());
-}
-
-void net_server::run_http_server(uint16_t port) {
-    net::Socket listener = net::Socket::tcp_v4();
-    listener.bind_v4_any(port);
-    listener.listen();
-
-    std::cout << "Listening on port " << port << "...\n";
-
-    for (;;) {
-        std::cout << "Waiting for connection...\n";
-        net::Socket client = listener.accept();
-        std::cout << "Accepted connection!\n";
-
-        // For now: handle one client at a time, blocking
-        handle_client(std::move(client));
-    }
 }
 
 bool net_server::serve_static(const std::string& doc_root,
                   const HttpRequest& req,
                   HttpResponse& res)
 {
-    // Only handle GET for now
     if (req.method != "GET") {
-        std::cerr << "No GET method\n";
         return false;
     }
 
@@ -136,6 +189,7 @@ bool net_server::serve_static(const std::string& doc_root,
         res.status_code = 400;
         res.reason = "Bad Request";
         res.body = "Invalid path\n";
+        res.set_header("Content-Type", "text/plain");
         return true; // we *did* handle it (with an error)
     }
 
@@ -154,9 +208,7 @@ bool net_server::serve_static(const std::string& doc_root,
     // Try to open the file
     std::ifstream file(fs_path, std::ios::binary);
     if (!file) {
-        std::cerr << "File not found: " << fs_path << '\n';
-        // File not found
-        return false;  // let caller decide 404 or other behavior
+        return false;  // let caller decide 404
     }
 
     // Read file to body
@@ -179,7 +231,6 @@ bool net_server::serve_static(const std::string& doc_root,
         else if (ext == "css")             content_type = "text/css";
         else if (ext == "js")              content_type = "application/javascript";
         else if (ext == "json")            content_type = "application/json";
-        // you can add more later
     }
 
     res.status_code = 200;

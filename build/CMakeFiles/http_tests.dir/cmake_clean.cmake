@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/http_tests.dir/link.d"
   "CMakeFiles/http_tests.dir/tests/http_message_tests.cpp.o"
   "CMakeFiles/http_tests.dir/tests/http_message_tests.cpp.o.d"
+  "CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o"
+  "CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o.d"
   "http_tests"
   "http_tests.pdb"
   "http_tests[1]_tests.cmake"

@@ -86,14 +86,30 @@ CMakeFiles/http_tests.dir/tests/http_message_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/http_tests.dir/tests/http_message_tests.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/tests/http_message_tests.cpp -o CMakeFiles/http_tests.dir/tests/http_message_tests.cpp.s
 
+CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o: CMakeFiles/http_tests.dir/flags.make
+CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o: /home/zav/Projects/http_cs/tests/http_server_tests.cpp
+CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o: CMakeFiles/http_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o -MF CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o.d -o CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o -c /home/zav/Projects/http_cs/tests/http_server_tests.cpp
+
+CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/tests/http_server_tests.cpp > CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.i
+
+CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/tests/http_server_tests.cpp -o CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.s
+
 # Object files for target http_tests
 http_tests_OBJECTS = \
-"CMakeFiles/http_tests.dir/tests/http_message_tests.cpp.o"
+"CMakeFiles/http_tests.dir/tests/http_message_tests.cpp.o" \
+"CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o"
 
 # External object files for target http_tests
 http_tests_EXTERNAL_OBJECTS =
 
 http_tests: CMakeFiles/http_tests.dir/tests/http_message_tests.cpp.o
+http_tests: CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o
 http_tests: CMakeFiles/http_tests.dir/build.make
 http_tests: CMakeFiles/http_tests.dir/compiler_depend.ts
 http_tests: libhttp.a
@@ -102,7 +118,7 @@ http_tests: lib/libgtest_main.a
 http_tests: libnet.a
 http_tests: lib/libgtest.a
 http_tests: CMakeFiles/http_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable http_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable http_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/http_tests.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -D TEST_TARGET=http_tests -D TEST_EXECUTABLE=/home/zav/Projects/http_cs/build/http_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/zav/Projects/http_cs/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=http_tests_TESTS -D CTEST_FILE=/home/zav/Projects/http_cs/build/http_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_DISCOVERY_EXTRA_ARGS= -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake/Modules/GoogleTestAddTests.cmake
 

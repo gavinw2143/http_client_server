@@ -868,6 +868,30 @@ tests/http_message_tests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_tests.dir/build.make CMakeFiles/http_tests.dir/tests/http_message_tests.cpp.s
 .PHONY : tests/http_message_tests.cpp.s
 
+tests/http_server_tests.o: tests/http_server_tests.cpp.o
+.PHONY : tests/http_server_tests.o
+
+# target to build an object file
+tests/http_server_tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_tests.dir/build.make CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.o
+.PHONY : tests/http_server_tests.cpp.o
+
+tests/http_server_tests.i: tests/http_server_tests.cpp.i
+.PHONY : tests/http_server_tests.i
+
+# target to preprocess a source file
+tests/http_server_tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_tests.dir/build.make CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.i
+.PHONY : tests/http_server_tests.cpp.i
+
+tests/http_server_tests.s: tests/http_server_tests.cpp.s
+.PHONY : tests/http_server_tests.s
+
+# target to generate assembly for a file
+tests/http_server_tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_tests.dir/build.make CMakeFiles/http_tests.dir/tests/http_server_tests.cpp.s
+.PHONY : tests/http_server_tests.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -945,6 +969,9 @@ help:
 	@echo "... tests/http_message_tests.o"
 	@echo "... tests/http_message_tests.i"
 	@echo "... tests/http_message_tests.s"
+	@echo "... tests/http_server_tests.o"
+	@echo "... tests/http_server_tests.i"
+	@echo "... tests/http_server_tests.s"
 .PHONY : help
 
 
