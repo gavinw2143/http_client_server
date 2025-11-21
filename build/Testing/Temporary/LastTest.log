@@ -1,10 +1,10 @@
-Start testing: Nov 21 01:59 UTC
+Start testing: Nov 21 02:48 UTC
 ----------------------------------------------------------
-1/3 Testing: HttpMessageTest.ParseSimpleGetRequest
-1/3 Test: HttpMessageTest.ParseSimpleGetRequest
+1/9 Testing: HttpMessageTest.ParseSimpleGetRequest
+1/9 Test: HttpMessageTest.ParseSimpleGetRequest
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.ParseSimpleGetRequest" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"HttpMessageTest.ParseSimpleGetRequest" start time: Nov 21 01:59 UTC
+"HttpMessageTest.ParseSimpleGetRequest" start time: Nov 21 02:48 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -23,15 +23,15 @@ Note: Google Test filter = HttpMessageTest.ParseSimpleGetRequest
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"HttpMessageTest.ParseSimpleGetRequest" end time: Nov 21 01:59 UTC
+"HttpMessageTest.ParseSimpleGetRequest" end time: Nov 21 02:48 UTC
 "HttpMessageTest.ParseSimpleGetRequest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/3 Testing: HttpMessageTest.ParseSimpleOkResponse
-2/3 Test: HttpMessageTest.ParseSimpleOkResponse
+2/9 Testing: HttpMessageTest.ParseSimpleOkResponse
+2/9 Test: HttpMessageTest.ParseSimpleOkResponse
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.ParseSimpleOkResponse" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"HttpMessageTest.ParseSimpleOkResponse" start time: Nov 21 01:59 UTC
+"HttpMessageTest.ParseSimpleOkResponse" start time: Nov 21 02:48 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -50,15 +50,15 @@ Note: Google Test filter = HttpMessageTest.ParseSimpleOkResponse
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"HttpMessageTest.ParseSimpleOkResponse" end time: Nov 21 01:59 UTC
+"HttpMessageTest.ParseSimpleOkResponse" end time: Nov 21 02:48 UTC
 "HttpMessageTest.ParseSimpleOkResponse" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/3 Testing: HttpMessageTest.ResponseSetHeaderOverwrites
-3/3 Test: HttpMessageTest.ResponseSetHeaderOverwrites
+3/9 Testing: HttpMessageTest.ResponseSetHeaderOverwrites
+3/9 Test: HttpMessageTest.ResponseSetHeaderOverwrites
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.ResponseSetHeaderOverwrites" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"HttpMessageTest.ResponseSetHeaderOverwrites" start time: Nov 21 01:59 UTC
+"HttpMessageTest.ResponseSetHeaderOverwrites" start time: Nov 21 02:48 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -77,8 +77,170 @@ Note: Google Test filter = HttpMessageTest.ResponseSetHeaderOverwrites
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"HttpMessageTest.ResponseSetHeaderOverwrites" end time: Nov 21 01:59 UTC
+"HttpMessageTest.ResponseSetHeaderOverwrites" end time: Nov 21 02:48 UTC
 "HttpMessageTest.ResponseSetHeaderOverwrites" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 21 01:59 UTC
+4/9 Testing: HttpMessageTest.RejectsRequestWithNoCRLF
+4/9 Test: HttpMessageTest.RejectsRequestWithNoCRLF
+Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.RejectsRequestWithNoCRLF" "--gtest_also_run_disabled_tests"
+Directory: /home/zav/Projects/http_cs/build
+"HttpMessageTest.RejectsRequestWithNoCRLF" start time: Nov 21 02:48 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HttpMessageTest.RejectsRequestWithNoCRLF
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HttpMessageTest
+[ RUN      ] HttpMessageTest.RejectsRequestWithNoCRLF
+[       OK ] HttpMessageTest.RejectsRequestWithNoCRLF (0 ms)
+[----------] 1 test from HttpMessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HttpMessageTest.RejectsRequestWithNoCRLF" end time: Nov 21 02:48 UTC
+"HttpMessageTest.RejectsRequestWithNoCRLF" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/9 Testing: HttpMessageTest.RejectsRequestWithMissingSecondSpace
+5/9 Test: HttpMessageTest.RejectsRequestWithMissingSecondSpace
+Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.RejectsRequestWithMissingSecondSpace" "--gtest_also_run_disabled_tests"
+Directory: /home/zav/Projects/http_cs/build
+"HttpMessageTest.RejectsRequestWithMissingSecondSpace" start time: Nov 21 02:48 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HttpMessageTest.RejectsRequestWithMissingSecondSpace
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HttpMessageTest
+[ RUN      ] HttpMessageTest.RejectsRequestWithMissingSecondSpace
+[       OK ] HttpMessageTest.RejectsRequestWithMissingSecondSpace (0 ms)
+[----------] 1 test from HttpMessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HttpMessageTest.RejectsRequestWithMissingSecondSpace" end time: Nov 21 02:48 UTC
+"HttpMessageTest.RejectsRequestWithMissingSecondSpace" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/9 Testing: HttpMessageTest.RejectsResponseWithNoCRLF
+6/9 Test: HttpMessageTest.RejectsResponseWithNoCRLF
+Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.RejectsResponseWithNoCRLF" "--gtest_also_run_disabled_tests"
+Directory: /home/zav/Projects/http_cs/build
+"HttpMessageTest.RejectsResponseWithNoCRLF" start time: Nov 21 02:48 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HttpMessageTest.RejectsResponseWithNoCRLF
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HttpMessageTest
+[ RUN      ] HttpMessageTest.RejectsResponseWithNoCRLF
+[       OK ] HttpMessageTest.RejectsResponseWithNoCRLF (0 ms)
+[----------] 1 test from HttpMessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HttpMessageTest.RejectsResponseWithNoCRLF" end time: Nov 21 02:48 UTC
+"HttpMessageTest.RejectsResponseWithNoCRLF" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/9 Testing: HttpMessageTest.RejectsResponseWithNonNumericStatusCode
+7/9 Test: HttpMessageTest.RejectsResponseWithNonNumericStatusCode
+Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.RejectsResponseWithNonNumericStatusCode" "--gtest_also_run_disabled_tests"
+Directory: /home/zav/Projects/http_cs/build
+"HttpMessageTest.RejectsResponseWithNonNumericStatusCode" start time: Nov 21 02:48 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HttpMessageTest.RejectsResponseWithNonNumericStatusCode
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HttpMessageTest
+[ RUN      ] HttpMessageTest.RejectsResponseWithNonNumericStatusCode
+[       OK ] HttpMessageTest.RejectsResponseWithNonNumericStatusCode (0 ms)
+[----------] 1 test from HttpMessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HttpMessageTest.RejectsResponseWithNonNumericStatusCode" end time: Nov 21 02:48 UTC
+"HttpMessageTest.RejectsResponseWithNonNumericStatusCode" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/9 Testing: HttpMessageTest.HeaderValueLookupIsNameExactMatch
+8/9 Test: HttpMessageTest.HeaderValueLookupIsNameExactMatch
+Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.HeaderValueLookupIsNameExactMatch" "--gtest_also_run_disabled_tests"
+Directory: /home/zav/Projects/http_cs/build
+"HttpMessageTest.HeaderValueLookupIsNameExactMatch" start time: Nov 21 02:48 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HttpMessageTest.HeaderValueLookupIsNameExactMatch
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HttpMessageTest
+[ RUN      ] HttpMessageTest.HeaderValueLookupIsNameExactMatch
+[       OK ] HttpMessageTest.HeaderValueLookupIsNameExactMatch (0 ms)
+[----------] 1 test from HttpMessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HttpMessageTest.HeaderValueLookupIsNameExactMatch" end time: Nov 21 02:48 UTC
+"HttpMessageTest.HeaderValueLookupIsNameExactMatch" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/9 Testing: HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders
+9/9 Test: HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders
+Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders" "--gtest_also_run_disabled_tests"
+Directory: /home/zav/Projects/http_cs/build
+"HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders" start time: Nov 21 02:48 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HttpMessageTest
+[ RUN      ] HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders
+[       OK ] HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders (0 ms)
+[----------] 1 test from HttpMessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders" end time: Nov 21 02:48 UTC
+"HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 21 02:48 UTC

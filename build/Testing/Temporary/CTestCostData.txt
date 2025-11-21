@@ -1,4 +1,10 @@
-HttpMessageTest.ParseSimpleGetRequest 2 0.000804171
-HttpMessageTest.ParseSimpleOkResponse 2 0.000774809
-HttpMessageTest.ResponseSetHeaderOverwrites 2 0.000753505
+HttpMessageTest.ParseSimpleGetRequest 7 0.000228813
+HttpMessageTest.ParseSimpleOkResponse 7 0.000218377
+HttpMessageTest.ResponseSetHeaderOverwrites 7 0.000211057
+HttpMessageTest.RejectsRequestWithNoCRLF 7 0.000203995
+HttpMessageTest.RejectsRequestWithMissingSecondSpace 7 0.000211753
+HttpMessageTest.RejectsResponseWithNoCRLF 6 0.000233482
+HttpMessageTest.RejectsResponseWithNonNumericStatusCode 5 0.000297297
+HttpMessageTest.HeaderValueLookupIsNameExactMatch 3 0.00048503
+HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders 1 0.00144789
 ---

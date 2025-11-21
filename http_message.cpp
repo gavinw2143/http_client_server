@@ -49,6 +49,13 @@ static bool parse_headers_and_body(const std::string& raw,
         std::string name  = line.substr(0, colon);
         std::string value = line.substr(colon + 1);
 
+        std::size_t last_non_space = name.find_last_not_of(" \t");
+        if (last_non_space != std::string::npos) {
+            name.erase(last_non_space + 1);
+        } else {
+            name.clear();
+        }
+
         std::size_t first_non_space = value.find_first_not_of(" \t");
         if (first_non_space != std::string::npos) {
             value.erase(0, first_non_space);

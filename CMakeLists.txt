@@ -1,13 +1,26 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(simple_http
-    LANGUAGES CXX
-)
-
 # Use C++20 (or C++17 if you prefer)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+
+project(simple_http
+    LANGUAGES CXX
+)
+
+include(CTest)
+include(FetchContent)
+
+FetchContent_Declare(
+    googletest
+    URL https://github.com/google/googletest/archive/refs/tags/v1.15.2.zip
+)
+
+# For MSVC: avoid overriding parent project's runtime library settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+FetchContent_MakeAvailable(googletest)
 
 # Common warnings
 if (MSVC)
@@ -81,3 +94,20 @@ target_link_libraries(http_client_main
     PRIVATE
         http
 )
+
+# --------------------------------------------------------------------
+# Executable: http tests
+# --------------------------------------------------------------------
+add_executable(http_tests
+    tests/http_message_tests.cpp
+)
+
+target_link_libraries(http_tests
+    PRIVATE
+        http           # your http library
+        GTest::gtest
+        GTest::gtest_main
+)
+
+include(GoogleTest)
+gtest_discover_tests(http_tests)
