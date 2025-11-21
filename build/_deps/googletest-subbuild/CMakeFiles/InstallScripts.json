@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/zav/Projects/http_cs/build/_deps/googletest-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

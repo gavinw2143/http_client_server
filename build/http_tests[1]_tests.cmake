@@ -1,0 +1,7 @@
+add_test([=[HttpMessageTest.ParseSimpleGetRequest]=]  /home/zav/Projects/http_cs/build/http_tests [==[--gtest_filter=HttpMessageTest.ParseSimpleGetRequest]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[HttpMessageTest.ParseSimpleGetRequest]=]  PROPERTIES WORKING_DIRECTORY /home/zav/Projects/http_cs/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[HttpMessageTest.ParseSimpleOkResponse]=]  /home/zav/Projects/http_cs/build/http_tests [==[--gtest_filter=HttpMessageTest.ParseSimpleOkResponse]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[HttpMessageTest.ParseSimpleOkResponse]=]  PROPERTIES WORKING_DIRECTORY /home/zav/Projects/http_cs/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[HttpMessageTest.ResponseSetHeaderOverwrites]=]  /home/zav/Projects/http_cs/build/http_tests [==[--gtest_filter=HttpMessageTest.ResponseSetHeaderOverwrites]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[HttpMessageTest.ResponseSetHeaderOverwrites]=]  PROPERTIES WORKING_DIRECTORY /home/zav/Projects/http_cs/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  http_tests_TESTS HttpMessageTest.ParseSimpleGetRequest HttpMessageTest.ParseSimpleOkResponse HttpMessageTest.ResponseSetHeaderOverwrites)

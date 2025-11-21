@@ -1,0 +1,84 @@
+Start testing: Nov 21 01:59 UTC
+----------------------------------------------------------
+1/3 Testing: HttpMessageTest.ParseSimpleGetRequest
+1/3 Test: HttpMessageTest.ParseSimpleGetRequest
+Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.ParseSimpleGetRequest" "--gtest_also_run_disabled_tests"
+Directory: /home/zav/Projects/http_cs/build
+"HttpMessageTest.ParseSimpleGetRequest" start time: Nov 21 01:59 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HttpMessageTest.ParseSimpleGetRequest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HttpMessageTest
+[ RUN      ] HttpMessageTest.ParseSimpleGetRequest
+[       OK ] HttpMessageTest.ParseSimpleGetRequest (0 ms)
+[----------] 1 test from HttpMessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HttpMessageTest.ParseSimpleGetRequest" end time: Nov 21 01:59 UTC
+"HttpMessageTest.ParseSimpleGetRequest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: HttpMessageTest.ParseSimpleOkResponse
+2/3 Test: HttpMessageTest.ParseSimpleOkResponse
+Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.ParseSimpleOkResponse" "--gtest_also_run_disabled_tests"
+Directory: /home/zav/Projects/http_cs/build
+"HttpMessageTest.ParseSimpleOkResponse" start time: Nov 21 01:59 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HttpMessageTest.ParseSimpleOkResponse
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HttpMessageTest
+[ RUN      ] HttpMessageTest.ParseSimpleOkResponse
+[       OK ] HttpMessageTest.ParseSimpleOkResponse (0 ms)
+[----------] 1 test from HttpMessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HttpMessageTest.ParseSimpleOkResponse" end time: Nov 21 01:59 UTC
+"HttpMessageTest.ParseSimpleOkResponse" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: HttpMessageTest.ResponseSetHeaderOverwrites
+3/3 Test: HttpMessageTest.ResponseSetHeaderOverwrites
+Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.ResponseSetHeaderOverwrites" "--gtest_also_run_disabled_tests"
+Directory: /home/zav/Projects/http_cs/build
+"HttpMessageTest.ResponseSetHeaderOverwrites" start time: Nov 21 01:59 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HttpMessageTest.ResponseSetHeaderOverwrites
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HttpMessageTest
+[ RUN      ] HttpMessageTest.ResponseSetHeaderOverwrites
+[       OK ] HttpMessageTest.ResponseSetHeaderOverwrites (0 ms)
+[----------] 1 test from HttpMessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HttpMessageTest.ResponseSetHeaderOverwrites" end time: Nov 21 01:59 UTC
+"HttpMessageTest.ResponseSetHeaderOverwrites" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 21 01:59 UTC

@@ -1,0 +1,5 @@
+if(EXISTS "/home/zav/Projects/http_cs/build/http_tests[1]_tests.cmake")
+  include("/home/zav/Projects/http_cs/build/http_tests[1]_tests.cmake")
+else()
+  add_test(http_tests_NOT_BUILT http_tests_NOT_BUILT)
+endif()
