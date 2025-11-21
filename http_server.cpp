@@ -1,6 +1,6 @@
 #include <iostream>
+#include <fstream>
 #include "http_server.hpp"
-#include "http_message.hpp"
 
 void net_server::handle_client(net::Socket client) {
     std::string raw;
@@ -61,14 +61,16 @@ void net_server::handle_client(net::Socket client) {
     HttpResponse res;
 
     if (req.method == "GET") {
-        if (req.target == "/") {
-            res.body = "Root page\n";
-        } else if (req.target == "/hello") {
-            res.body = "Hello endpoint\n";
-        } else {
-            res.status_code = 404;
-            res.reason = "Not Found";
-            res.body = "404 Not Found\n";
+        // try static files
+        if (!serve_static("./www", req, res)) {
+            // temp fallback
+            if (req.target == "/hello") {
+                res.body = "Hello endpoint\n";
+            } else {
+                res.status_code = 404;
+                res.reason = "Not Found";
+                res.body = "404 Not Found\n";
+            }
         }
     }
     else if (req.method == "POST") {
@@ -110,4 +112,80 @@ void net_server::run_http_server(uint16_t port) {
         // For now: handle one client at a time, blocking
         handle_client(std::move(client));
     }
+}
+
+bool net_server::serve_static(const std::string& doc_root,
+                  const HttpRequest& req,
+                  HttpResponse& res)
+{
+    // Only handle GET for now
+    if (req.method != "GET") {
+        std::cerr << "No GET method\n";
+        return false;
+    }
+
+    std::string path = req.target;
+
+    // Normalize "/" -> "/index.html"
+    if (path == "/") {
+        path = "/index.html";
+    }
+
+    // Simple security: disallow ".."
+    if (path.find("..") != std::string::npos) {
+        res.status_code = 400;
+        res.reason = "Bad Request";
+        res.body = "Invalid path\n";
+        return true; // we *did* handle it (with an error)
+    }
+
+    // Strip leading '/'
+    if (!path.empty() && path[0] == '/') {
+        path.erase(0, 1);
+    }
+
+    // Build filesystem path: doc_root + "/" + path
+    std::string fs_path = doc_root;
+    if (!fs_path.empty() && fs_path.back() != '/' && fs_path.back() != '\\') {
+        fs_path += '/';
+    }
+    fs_path += path;
+
+    // Try to open the file
+    std::ifstream file(fs_path, std::ios::binary);
+    if (!file) {
+        std::cerr << "File not found: " << fs_path << '\n';
+        // File not found
+        return false;  // let caller decide 404 or other behavior
+    }
+
+    // Read file to body
+    std::string body;
+    file.seekg(0, std::ios::end);
+    std::streampos size = file.tellg();
+    if (size > 0) {
+        body.resize(static_cast<std::size_t>(size));
+        file.seekg(0, std::ios::beg);
+        file.read(&body[0], size);
+    }
+
+    // Guess Content-Type from extension
+    std::string content_type = "application/octet-stream";
+    auto dot = path.find_last_of('.');
+    if (dot != std::string::npos) {
+        std::string ext = path.substr(dot + 1);
+        if (ext == "html" || ext == "htm") content_type = "text/html";
+        else if (ext == "txt")             content_type = "text/plain";
+        else if (ext == "css")             content_type = "text/css";
+        else if (ext == "js")              content_type = "application/javascript";
+        else if (ext == "json")            content_type = "application/json";
+        // you can add more later
+    }
+
+    res.status_code = 200;
+    res.reason = "OK";
+    res.body = std::move(body);
+    res.set_header("Content-Type", content_type);
+
+    return true;
 }

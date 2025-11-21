@@ -116,6 +116,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/net.dir/DependInfo.cmake"
   "CMakeFiles/http.dir/DependInfo.cmake"
-  "CMakeFiles/http_server.dir/DependInfo.cmake"
+  "CMakeFiles/http_server_main.dir/DependInfo.cmake"
   "CMakeFiles/http_client_main.dir/DependInfo.cmake"
   )

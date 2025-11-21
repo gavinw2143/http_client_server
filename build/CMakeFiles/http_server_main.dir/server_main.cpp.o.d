@@ -1,4 +1,4 @@
-CMakeFiles/http_server.dir/server_main.cpp.o: \
+CMakeFiles/http_server_main.dir/server_main.cpp.o: \
  /home/zav/Projects/http_cs/server_main.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/15.2.1/iostream \
  /usr/include/c++/15.2.1/bits/requires_hosted.h \

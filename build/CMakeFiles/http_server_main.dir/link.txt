@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/http_server_main.dir/link.d CMakeFiles/http_server_main.dir/server_main.cpp.o -o http_server_main  libhttp.a libnet.a

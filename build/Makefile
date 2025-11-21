@@ -143,17 +143,17 @@ http/fast:
 .PHONY : http/fast
 
 #=============================================================================
-# Target rules for targets named http_server
+# Target rules for targets named http_server_main
 
 # Build rule for target.
-http_server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 http_server
-.PHONY : http_server
+http_server_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 http_server_main
+.PHONY : http_server_main
 
 # fast build rule for target.
-http_server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/build
-.PHONY : http_server/fast
+http_server_main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server_main.dir/build.make CMakeFiles/http_server_main.dir/build
+.PHONY : http_server_main/fast
 
 #=============================================================================
 # Target rules for targets named http_client_main
@@ -317,7 +317,7 @@ server_main.o: server_main.cpp.o
 
 # target to build an object file
 server_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/server_main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server_main.dir/build.make CMakeFiles/http_server_main.dir/server_main.cpp.o
 .PHONY : server_main.cpp.o
 
 server_main.i: server_main.cpp.i
@@ -325,7 +325,7 @@ server_main.i: server_main.cpp.i
 
 # target to preprocess a source file
 server_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/server_main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server_main.dir/build.make CMakeFiles/http_server_main.dir/server_main.cpp.i
 .PHONY : server_main.cpp.i
 
 server_main.s: server_main.cpp.s
@@ -333,7 +333,7 @@ server_main.s: server_main.cpp.s
 
 # target to generate assembly for a file
 server_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/server_main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server_main.dir/build.make CMakeFiles/http_server_main.dir/server_main.cpp.s
 .PHONY : server_main.cpp.s
 
 socket.o: socket.cpp.o
@@ -370,7 +370,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... http"
 	@echo "... http_client_main"
-	@echo "... http_server"
+	@echo "... http_server_main"
 	@echo "... net"
 	@echo "... client_main.o"
 	@echo "... client_main.i"
