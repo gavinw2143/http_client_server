@@ -9,11 +9,20 @@ static bool parse_headers_and_body(const std::string& raw,
         if (error_message) *error_message = std::move(msg);
     };
 
+    constexpr std::size_t MAX_HEADER_BYTES = 8192;
+    
     std::vector<std::string> header_lines;
     std::string current;
+    std::size_t first_start_pos = start_pos;
     bool saw_blank_line = false;
 
     while (start_pos + 1 < raw.size()) {
+        // start_pos - first_start_pos gives current header byte length
+        if (start_pos - first_start_pos > MAX_HEADER_BYTES) {
+            set_error("Header section too large");
+            return false;
+        }
+
         char c  = raw[start_pos];
         char c2 = raw[start_pos + 1];
 

@@ -168,3 +168,20 @@ TEST(HttpMessageTest, RejectsResponseWithNoBlankLineAfterHeaders) {
     EXPECT_FALSE(ok);
     EXPECT_FALSE(error.empty());
 }
+
+TEST(HttpMessageTest, RejectsRequestWithTooLargeHeaders) {
+    std::string big_value(10000, 'a'); // 10 KB
+    std::string raw =
+        "GET / HTTP/1.1\r\n"
+        "Host: example.com\r\n"
+        "X-Big: " + big_value + "\r\n"
+        "\r\n";
+
+    HttpRequest req;
+    std::string error;
+
+    bool ok = parse_http_request(raw, req, &error);
+
+    EXPECT_FALSE(ok);
+    EXPECT_FALSE(error.empty());
+}
