@@ -72,32 +72,34 @@ include CMakeFiles/http_client_main.dir/flags.make
 CMakeFiles/http_client_main.dir/codegen:
 .PHONY : CMakeFiles/http_client_main.dir/codegen
 
-CMakeFiles/http_client_main.dir/client_main.cpp.o: CMakeFiles/http_client_main.dir/flags.make
-CMakeFiles/http_client_main.dir/client_main.cpp.o: /home/zav/Projects/http_cs/client_main.cpp
-CMakeFiles/http_client_main.dir/client_main.cpp.o: CMakeFiles/http_client_main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/http_client_main.dir/client_main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/http_client_main.dir/client_main.cpp.o -MF CMakeFiles/http_client_main.dir/client_main.cpp.o.d -o CMakeFiles/http_client_main.dir/client_main.cpp.o -c /home/zav/Projects/http_cs/client_main.cpp
+CMakeFiles/http_client_main.dir/src/client_main.cpp.o: CMakeFiles/http_client_main.dir/flags.make
+CMakeFiles/http_client_main.dir/src/client_main.cpp.o: /home/zav/Projects/http_cs/src/client_main.cpp
+CMakeFiles/http_client_main.dir/src/client_main.cpp.o: CMakeFiles/http_client_main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/http_client_main.dir/src/client_main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/http_client_main.dir/src/client_main.cpp.o -MF CMakeFiles/http_client_main.dir/src/client_main.cpp.o.d -o CMakeFiles/http_client_main.dir/src/client_main.cpp.o -c /home/zav/Projects/http_cs/src/client_main.cpp
 
-CMakeFiles/http_client_main.dir/client_main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/http_client_main.dir/client_main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/client_main.cpp > CMakeFiles/http_client_main.dir/client_main.cpp.i
+CMakeFiles/http_client_main.dir/src/client_main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/http_client_main.dir/src/client_main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/src/client_main.cpp > CMakeFiles/http_client_main.dir/src/client_main.cpp.i
 
-CMakeFiles/http_client_main.dir/client_main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/http_client_main.dir/client_main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/client_main.cpp -o CMakeFiles/http_client_main.dir/client_main.cpp.s
+CMakeFiles/http_client_main.dir/src/client_main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/http_client_main.dir/src/client_main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/src/client_main.cpp -o CMakeFiles/http_client_main.dir/src/client_main.cpp.s
 
 # Object files for target http_client_main
 http_client_main_OBJECTS = \
-"CMakeFiles/http_client_main.dir/client_main.cpp.o"
+"CMakeFiles/http_client_main.dir/src/client_main.cpp.o"
 
 # External object files for target http_client_main
 http_client_main_EXTERNAL_OBJECTS =
 
-http_client_main: CMakeFiles/http_client_main.dir/client_main.cpp.o
+http_client_main: CMakeFiles/http_client_main.dir/src/client_main.cpp.o
 http_client_main: CMakeFiles/http_client_main.dir/build.make
 http_client_main: CMakeFiles/http_client_main.dir/compiler_depend.ts
 http_client_main: libhttp.a
 http_client_main: libnet.a
+http_client_main: /usr/lib/libssl.so
+http_client_main: /usr/lib/libcrypto.so
 http_client_main: CMakeFiles/http_client_main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable http_client_main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/http_client_main.dir/link.txt --verbose=$(VERBOSE)

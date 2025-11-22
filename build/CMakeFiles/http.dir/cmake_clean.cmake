@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/http.dir/http_client.cpp.o"
-  "CMakeFiles/http.dir/http_client.cpp.o.d"
-  "CMakeFiles/http.dir/http_message.cpp.o"
-  "CMakeFiles/http.dir/http_message.cpp.o.d"
-  "CMakeFiles/http.dir/http_server.cpp.o"
-  "CMakeFiles/http.dir/http_server.cpp.o.d"
+  "CMakeFiles/http.dir/src/http_client.cpp.o"
+  "CMakeFiles/http.dir/src/http_client.cpp.o.d"
+  "CMakeFiles/http.dir/src/http_message.cpp.o"
+  "CMakeFiles/http.dir/src/http_message.cpp.o.d"
+  "CMakeFiles/http.dir/src/http_server.cpp.o"
+  "CMakeFiles/http.dir/src/http_server.cpp.o.d"
   "libhttp.a"
   "libhttp.pdb"
 )

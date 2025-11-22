@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zav/Projects/http_cs/http_client.cpp" "CMakeFiles/http.dir/http_client.cpp.o" "gcc" "CMakeFiles/http.dir/http_client.cpp.o.d"
-  "/home/zav/Projects/http_cs/http_message.cpp" "CMakeFiles/http.dir/http_message.cpp.o" "gcc" "CMakeFiles/http.dir/http_message.cpp.o.d"
-  "/home/zav/Projects/http_cs/http_server.cpp" "CMakeFiles/http.dir/http_server.cpp.o" "gcc" "CMakeFiles/http.dir/http_server.cpp.o.d"
+  "/home/zav/Projects/http_cs/src/http_client.cpp" "CMakeFiles/http.dir/src/http_client.cpp.o" "gcc" "CMakeFiles/http.dir/src/http_client.cpp.o.d"
+  "/home/zav/Projects/http_cs/src/http_message.cpp" "CMakeFiles/http.dir/src/http_message.cpp.o" "gcc" "CMakeFiles/http.dir/src/http_message.cpp.o.d"
+  "/home/zav/Projects/http_cs/src/http_server.cpp" "CMakeFiles/http.dir/src/http_server.cpp.o" "gcc" "CMakeFiles/http.dir/src/http_server.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

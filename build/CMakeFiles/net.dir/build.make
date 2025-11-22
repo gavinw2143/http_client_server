@@ -72,63 +72,79 @@ include CMakeFiles/net.dir/flags.make
 CMakeFiles/net.dir/codegen:
 .PHONY : CMakeFiles/net.dir/codegen
 
-CMakeFiles/net.dir/net_platform.cpp.o: CMakeFiles/net.dir/flags.make
-CMakeFiles/net.dir/net_platform.cpp.o: /home/zav/Projects/http_cs/net_platform.cpp
-CMakeFiles/net.dir/net_platform.cpp.o: CMakeFiles/net.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/net.dir/net_platform.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/net.dir/net_platform.cpp.o -MF CMakeFiles/net.dir/net_platform.cpp.o.d -o CMakeFiles/net.dir/net_platform.cpp.o -c /home/zav/Projects/http_cs/net_platform.cpp
+CMakeFiles/net.dir/src/net_platform.cpp.o: CMakeFiles/net.dir/flags.make
+CMakeFiles/net.dir/src/net_platform.cpp.o: /home/zav/Projects/http_cs/src/net_platform.cpp
+CMakeFiles/net.dir/src/net_platform.cpp.o: CMakeFiles/net.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/net.dir/src/net_platform.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/net.dir/src/net_platform.cpp.o -MF CMakeFiles/net.dir/src/net_platform.cpp.o.d -o CMakeFiles/net.dir/src/net_platform.cpp.o -c /home/zav/Projects/http_cs/src/net_platform.cpp
 
-CMakeFiles/net.dir/net_platform.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/net.dir/net_platform.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/net_platform.cpp > CMakeFiles/net.dir/net_platform.cpp.i
+CMakeFiles/net.dir/src/net_platform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/net.dir/src/net_platform.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/src/net_platform.cpp > CMakeFiles/net.dir/src/net_platform.cpp.i
 
-CMakeFiles/net.dir/net_platform.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/net.dir/net_platform.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/net_platform.cpp -o CMakeFiles/net.dir/net_platform.cpp.s
+CMakeFiles/net.dir/src/net_platform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/net.dir/src/net_platform.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/src/net_platform.cpp -o CMakeFiles/net.dir/src/net_platform.cpp.s
 
-CMakeFiles/net.dir/socket.cpp.o: CMakeFiles/net.dir/flags.make
-CMakeFiles/net.dir/socket.cpp.o: /home/zav/Projects/http_cs/socket.cpp
-CMakeFiles/net.dir/socket.cpp.o: CMakeFiles/net.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/net.dir/socket.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/net.dir/socket.cpp.o -MF CMakeFiles/net.dir/socket.cpp.o.d -o CMakeFiles/net.dir/socket.cpp.o -c /home/zav/Projects/http_cs/socket.cpp
+CMakeFiles/net.dir/src/socket.cpp.o: CMakeFiles/net.dir/flags.make
+CMakeFiles/net.dir/src/socket.cpp.o: /home/zav/Projects/http_cs/src/socket.cpp
+CMakeFiles/net.dir/src/socket.cpp.o: CMakeFiles/net.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/net.dir/src/socket.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/net.dir/src/socket.cpp.o -MF CMakeFiles/net.dir/src/socket.cpp.o.d -o CMakeFiles/net.dir/src/socket.cpp.o -c /home/zav/Projects/http_cs/src/socket.cpp
 
-CMakeFiles/net.dir/socket.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/net.dir/socket.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/socket.cpp > CMakeFiles/net.dir/socket.cpp.i
+CMakeFiles/net.dir/src/socket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/net.dir/src/socket.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/src/socket.cpp > CMakeFiles/net.dir/src/socket.cpp.i
 
-CMakeFiles/net.dir/socket.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/net.dir/socket.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/socket.cpp -o CMakeFiles/net.dir/socket.cpp.s
+CMakeFiles/net.dir/src/socket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/net.dir/src/socket.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/src/socket.cpp -o CMakeFiles/net.dir/src/socket.cpp.s
 
-CMakeFiles/net.dir/net_connect.cpp.o: CMakeFiles/net.dir/flags.make
-CMakeFiles/net.dir/net_connect.cpp.o: /home/zav/Projects/http_cs/net_connect.cpp
-CMakeFiles/net.dir/net_connect.cpp.o: CMakeFiles/net.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/net.dir/net_connect.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/net.dir/net_connect.cpp.o -MF CMakeFiles/net.dir/net_connect.cpp.o.d -o CMakeFiles/net.dir/net_connect.cpp.o -c /home/zav/Projects/http_cs/net_connect.cpp
+CMakeFiles/net.dir/src/net_connect.cpp.o: CMakeFiles/net.dir/flags.make
+CMakeFiles/net.dir/src/net_connect.cpp.o: /home/zav/Projects/http_cs/src/net_connect.cpp
+CMakeFiles/net.dir/src/net_connect.cpp.o: CMakeFiles/net.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/net.dir/src/net_connect.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/net.dir/src/net_connect.cpp.o -MF CMakeFiles/net.dir/src/net_connect.cpp.o.d -o CMakeFiles/net.dir/src/net_connect.cpp.o -c /home/zav/Projects/http_cs/src/net_connect.cpp
 
-CMakeFiles/net.dir/net_connect.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/net.dir/net_connect.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/net_connect.cpp > CMakeFiles/net.dir/net_connect.cpp.i
+CMakeFiles/net.dir/src/net_connect.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/net.dir/src/net_connect.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/src/net_connect.cpp > CMakeFiles/net.dir/src/net_connect.cpp.i
 
-CMakeFiles/net.dir/net_connect.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/net.dir/net_connect.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/net_connect.cpp -o CMakeFiles/net.dir/net_connect.cpp.s
+CMakeFiles/net.dir/src/net_connect.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/net.dir/src/net_connect.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/src/net_connect.cpp -o CMakeFiles/net.dir/src/net_connect.cpp.s
+
+CMakeFiles/net.dir/src/net_tls.cpp.o: CMakeFiles/net.dir/flags.make
+CMakeFiles/net.dir/src/net_tls.cpp.o: /home/zav/Projects/http_cs/src/net_tls.cpp
+CMakeFiles/net.dir/src/net_tls.cpp.o: CMakeFiles/net.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/net.dir/src/net_tls.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/net.dir/src/net_tls.cpp.o -MF CMakeFiles/net.dir/src/net_tls.cpp.o.d -o CMakeFiles/net.dir/src/net_tls.cpp.o -c /home/zav/Projects/http_cs/src/net_tls.cpp
+
+CMakeFiles/net.dir/src/net_tls.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/net.dir/src/net_tls.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/src/net_tls.cpp > CMakeFiles/net.dir/src/net_tls.cpp.i
+
+CMakeFiles/net.dir/src/net_tls.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/net.dir/src/net_tls.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/src/net_tls.cpp -o CMakeFiles/net.dir/src/net_tls.cpp.s
 
 # Object files for target net
 net_OBJECTS = \
-"CMakeFiles/net.dir/net_platform.cpp.o" \
-"CMakeFiles/net.dir/socket.cpp.o" \
-"CMakeFiles/net.dir/net_connect.cpp.o"
+"CMakeFiles/net.dir/src/net_platform.cpp.o" \
+"CMakeFiles/net.dir/src/socket.cpp.o" \
+"CMakeFiles/net.dir/src/net_connect.cpp.o" \
+"CMakeFiles/net.dir/src/net_tls.cpp.o"
 
 # External object files for target net
 net_EXTERNAL_OBJECTS =
 
-libnet.a: CMakeFiles/net.dir/net_platform.cpp.o
-libnet.a: CMakeFiles/net.dir/socket.cpp.o
-libnet.a: CMakeFiles/net.dir/net_connect.cpp.o
+libnet.a: CMakeFiles/net.dir/src/net_platform.cpp.o
+libnet.a: CMakeFiles/net.dir/src/socket.cpp.o
+libnet.a: CMakeFiles/net.dir/src/net_connect.cpp.o
+libnet.a: CMakeFiles/net.dir/src/net_tls.cpp.o
 libnet.a: CMakeFiles/net.dir/build.make
 libnet.a: CMakeFiles/net.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libnet.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libnet.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/net.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/net.dir/link.txt --verbose=$(VERBOSE)
 

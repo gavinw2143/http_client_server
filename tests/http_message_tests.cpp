@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "../http_message.hpp"
+#include "http_message.hpp"
 
 // Basic GET request parse
 TEST(HttpMessageTest, ParseSimpleGetRequest) {

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/zav/Projects/http_cs -isystem /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/include -isystem /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest
+CXX_INCLUDES = -I/home/zav/Projects/http_cs/include -isystem /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/include -isystem /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest
 
 CXX_FLAGS = -std=c++20 -Wall -Wextra -Wpedantic
 

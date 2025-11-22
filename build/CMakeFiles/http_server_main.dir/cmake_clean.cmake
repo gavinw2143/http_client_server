@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/http_server_main.dir/link.d"
-  "CMakeFiles/http_server_main.dir/server_main.cpp.o"
-  "CMakeFiles/http_server_main.dir/server_main.cpp.o.d"
+  "CMakeFiles/http_server_main.dir/src/server_main.cpp.o"
+  "CMakeFiles/http_server_main.dir/src/server_main.cpp.o.d"
   "http_server_main"
   "http_server_main.pdb"
 )

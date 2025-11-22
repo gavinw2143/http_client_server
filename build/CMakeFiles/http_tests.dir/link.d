@@ -8,6 +8,8 @@ http_tests: \
   lib/libgtest.a \
   lib/libgtest_main.a \
   libnet.a \
+  /usr/lib/libssl.so \
+  /usr/lib/libcrypto.so \
   lib/libgtest.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
@@ -54,6 +56,10 @@ lib/libgtest.a:
 lib/libgtest_main.a:
 
 libnet.a:
+
+/usr/lib/libssl.so:
+
+/usr/lib/libcrypto.so:
 
 lib/libgtest.a:
 

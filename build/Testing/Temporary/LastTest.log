@@ -1,10 +1,10 @@
-Start testing: Nov 21 05:40 UTC
+Start testing: Nov 22 03:31 UTC
 ----------------------------------------------------------
 1/16 Testing: HttpMessageTest.ParseSimpleGetRequest
 1/16 Test: HttpMessageTest.ParseSimpleGetRequest
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.ParseSimpleGetRequest" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"HttpMessageTest.ParseSimpleGetRequest" start time: Nov 21 05:40 UTC
+"HttpMessageTest.ParseSimpleGetRequest" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -23,7 +23,7 @@ Note: Google Test filter = HttpMessageTest.ParseSimpleGetRequest
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"HttpMessageTest.ParseSimpleGetRequest" end time: Nov 21 05:40 UTC
+"HttpMessageTest.ParseSimpleGetRequest" end time: Nov 22 03:31 UTC
 "HttpMessageTest.ParseSimpleGetRequest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -31,7 +31,7 @@ Test Passed.
 2/16 Test: HttpMessageTest.ParseSimpleOkResponse
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.ParseSimpleOkResponse" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"HttpMessageTest.ParseSimpleOkResponse" start time: Nov 21 05:40 UTC
+"HttpMessageTest.ParseSimpleOkResponse" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -50,7 +50,7 @@ Note: Google Test filter = HttpMessageTest.ParseSimpleOkResponse
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"HttpMessageTest.ParseSimpleOkResponse" end time: Nov 21 05:40 UTC
+"HttpMessageTest.ParseSimpleOkResponse" end time: Nov 22 03:31 UTC
 "HttpMessageTest.ParseSimpleOkResponse" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -58,7 +58,7 @@ Test Passed.
 3/16 Test: HttpMessageTest.ResponseSetHeaderOverwrites
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.ResponseSetHeaderOverwrites" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"HttpMessageTest.ResponseSetHeaderOverwrites" start time: Nov 21 05:40 UTC
+"HttpMessageTest.ResponseSetHeaderOverwrites" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -77,7 +77,7 @@ Note: Google Test filter = HttpMessageTest.ResponseSetHeaderOverwrites
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"HttpMessageTest.ResponseSetHeaderOverwrites" end time: Nov 21 05:40 UTC
+"HttpMessageTest.ResponseSetHeaderOverwrites" end time: Nov 22 03:31 UTC
 "HttpMessageTest.ResponseSetHeaderOverwrites" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -85,7 +85,7 @@ Test Passed.
 4/16 Test: HttpMessageTest.RejectsRequestWithNoCRLF
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.RejectsRequestWithNoCRLF" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"HttpMessageTest.RejectsRequestWithNoCRLF" start time: Nov 21 05:40 UTC
+"HttpMessageTest.RejectsRequestWithNoCRLF" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -104,7 +104,7 @@ Note: Google Test filter = HttpMessageTest.RejectsRequestWithNoCRLF
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"HttpMessageTest.RejectsRequestWithNoCRLF" end time: Nov 21 05:40 UTC
+"HttpMessageTest.RejectsRequestWithNoCRLF" end time: Nov 22 03:31 UTC
 "HttpMessageTest.RejectsRequestWithNoCRLF" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -112,7 +112,7 @@ Test Passed.
 5/16 Test: HttpMessageTest.RejectsRequestWithMissingSecondSpace
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.RejectsRequestWithMissingSecondSpace" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"HttpMessageTest.RejectsRequestWithMissingSecondSpace" start time: Nov 21 05:40 UTC
+"HttpMessageTest.RejectsRequestWithMissingSecondSpace" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -131,7 +131,7 @@ Note: Google Test filter = HttpMessageTest.RejectsRequestWithMissingSecondSpace
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"HttpMessageTest.RejectsRequestWithMissingSecondSpace" end time: Nov 21 05:40 UTC
+"HttpMessageTest.RejectsRequestWithMissingSecondSpace" end time: Nov 22 03:31 UTC
 "HttpMessageTest.RejectsRequestWithMissingSecondSpace" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -139,7 +139,7 @@ Test Passed.
 6/16 Test: HttpMessageTest.RejectsResponseWithNoCRLF
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.RejectsResponseWithNoCRLF" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"HttpMessageTest.RejectsResponseWithNoCRLF" start time: Nov 21 05:40 UTC
+"HttpMessageTest.RejectsResponseWithNoCRLF" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -158,7 +158,7 @@ Note: Google Test filter = HttpMessageTest.RejectsResponseWithNoCRLF
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"HttpMessageTest.RejectsResponseWithNoCRLF" end time: Nov 21 05:40 UTC
+"HttpMessageTest.RejectsResponseWithNoCRLF" end time: Nov 22 03:31 UTC
 "HttpMessageTest.RejectsResponseWithNoCRLF" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -166,7 +166,7 @@ Test Passed.
 7/16 Test: HttpMessageTest.RejectsResponseWithNonNumericStatusCode
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.RejectsResponseWithNonNumericStatusCode" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"HttpMessageTest.RejectsResponseWithNonNumericStatusCode" start time: Nov 21 05:40 UTC
+"HttpMessageTest.RejectsResponseWithNonNumericStatusCode" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -185,7 +185,7 @@ Note: Google Test filter = HttpMessageTest.RejectsResponseWithNonNumericStatusCo
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"HttpMessageTest.RejectsResponseWithNonNumericStatusCode" end time: Nov 21 05:40 UTC
+"HttpMessageTest.RejectsResponseWithNonNumericStatusCode" end time: Nov 22 03:31 UTC
 "HttpMessageTest.RejectsResponseWithNonNumericStatusCode" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -193,7 +193,7 @@ Test Passed.
 8/16 Test: HttpMessageTest.HeaderValueLookupIsNameExactMatch
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.HeaderValueLookupIsNameExactMatch" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"HttpMessageTest.HeaderValueLookupIsNameExactMatch" start time: Nov 21 05:40 UTC
+"HttpMessageTest.HeaderValueLookupIsNameExactMatch" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -212,7 +212,7 @@ Note: Google Test filter = HttpMessageTest.HeaderValueLookupIsNameExactMatch
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"HttpMessageTest.HeaderValueLookupIsNameExactMatch" end time: Nov 21 05:40 UTC
+"HttpMessageTest.HeaderValueLookupIsNameExactMatch" end time: Nov 22 03:31 UTC
 "HttpMessageTest.HeaderValueLookupIsNameExactMatch" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -220,7 +220,7 @@ Test Passed.
 9/16 Test: HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders" start time: Nov 21 05:40 UTC
+"HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -239,7 +239,7 @@ Note: Google Test filter = HttpMessageTest.RejectsResponseWithNoBlankLineAfterHe
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders" end time: Nov 21 05:40 UTC
+"HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders" end time: Nov 22 03:31 UTC
 "HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -247,7 +247,7 @@ Test Passed.
 10/16 Test: HttpMessageTest.RejectsRequestWithTooLargeHeaders
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=HttpMessageTest.RejectsRequestWithTooLargeHeaders" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"HttpMessageTest.RejectsRequestWithTooLargeHeaders" start time: Nov 21 05:40 UTC
+"HttpMessageTest.RejectsRequestWithTooLargeHeaders" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -266,7 +266,7 @@ Note: Google Test filter = HttpMessageTest.RejectsRequestWithTooLargeHeaders
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"HttpMessageTest.RejectsRequestWithTooLargeHeaders" end time: Nov 21 05:40 UTC
+"HttpMessageTest.RejectsRequestWithTooLargeHeaders" end time: Nov 22 03:31 UTC
 "HttpMessageTest.RejectsRequestWithTooLargeHeaders" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -274,7 +274,7 @@ Test Passed.
 11/16 Test: ServeStaticTest.ServesIndexForRootPath
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=ServeStaticTest.ServesIndexForRootPath" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"ServeStaticTest.ServesIndexForRootPath" start time: Nov 21 05:40 UTC
+"ServeStaticTest.ServesIndexForRootPath" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -293,7 +293,7 @@ Note: Google Test filter = ServeStaticTest.ServesIndexForRootPath
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ServeStaticTest.ServesIndexForRootPath" end time: Nov 21 05:40 UTC
+"ServeStaticTest.ServesIndexForRootPath" end time: Nov 22 03:31 UTC
 "ServeStaticTest.ServesIndexForRootPath" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -301,7 +301,7 @@ Test Passed.
 12/16 Test: ServeStaticTest.ServesArbitraryFileUnderDocRoot
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=ServeStaticTest.ServesArbitraryFileUnderDocRoot" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"ServeStaticTest.ServesArbitraryFileUnderDocRoot" start time: Nov 21 05:40 UTC
+"ServeStaticTest.ServesArbitraryFileUnderDocRoot" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -320,7 +320,7 @@ Note: Google Test filter = ServeStaticTest.ServesArbitraryFileUnderDocRoot
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ServeStaticTest.ServesArbitraryFileUnderDocRoot" end time: Nov 21 05:40 UTC
+"ServeStaticTest.ServesArbitraryFileUnderDocRoot" end time: Nov 22 03:31 UTC
 "ServeStaticTest.ServesArbitraryFileUnderDocRoot" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -328,7 +328,7 @@ Test Passed.
 13/16 Test: ServeStaticTest.RejectsPathTraversalOutsideDocRoot
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=ServeStaticTest.RejectsPathTraversalOutsideDocRoot" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"ServeStaticTest.RejectsPathTraversalOutsideDocRoot" start time: Nov 21 05:40 UTC
+"ServeStaticTest.RejectsPathTraversalOutsideDocRoot" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -347,7 +347,7 @@ Note: Google Test filter = ServeStaticTest.RejectsPathTraversalOutsideDocRoot
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ServeStaticTest.RejectsPathTraversalOutsideDocRoot" end time: Nov 21 05:40 UTC
+"ServeStaticTest.RejectsPathTraversalOutsideDocRoot" end time: Nov 22 03:31 UTC
 "ServeStaticTest.RejectsPathTraversalOutsideDocRoot" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -355,7 +355,7 @@ Test Passed.
 14/16 Test: ServeStaticTest.ReturnsFalseForNonGetMethods
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=ServeStaticTest.ReturnsFalseForNonGetMethods" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"ServeStaticTest.ReturnsFalseForNonGetMethods" start time: Nov 21 05:40 UTC
+"ServeStaticTest.ReturnsFalseForNonGetMethods" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -374,7 +374,7 @@ Note: Google Test filter = ServeStaticTest.ReturnsFalseForNonGetMethods
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ServeStaticTest.ReturnsFalseForNonGetMethods" end time: Nov 21 05:40 UTC
+"ServeStaticTest.ReturnsFalseForNonGetMethods" end time: Nov 22 03:31 UTC
 "ServeStaticTest.ReturnsFalseForNonGetMethods" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -382,7 +382,7 @@ Test Passed.
 15/16 Test: ServeStaticTest.SetsContentTypeForHtml
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=ServeStaticTest.SetsContentTypeForHtml" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"ServeStaticTest.SetsContentTypeForHtml" start time: Nov 21 05:40 UTC
+"ServeStaticTest.SetsContentTypeForHtml" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -401,7 +401,7 @@ Note: Google Test filter = ServeStaticTest.SetsContentTypeForHtml
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ServeStaticTest.SetsContentTypeForHtml" end time: Nov 21 05:40 UTC
+"ServeStaticTest.SetsContentTypeForHtml" end time: Nov 22 03:31 UTC
 "ServeStaticTest.SetsContentTypeForHtml" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -409,7 +409,7 @@ Test Passed.
 16/16 Test: ServeStaticTest.SetsContentTypeForTxt
 Command: "/home/zav/Projects/http_cs/build/http_tests" "--gtest_filter=ServeStaticTest.SetsContentTypeForTxt" "--gtest_also_run_disabled_tests"
 Directory: /home/zav/Projects/http_cs/build
-"ServeStaticTest.SetsContentTypeForTxt" start time: Nov 21 05:40 UTC
+"ServeStaticTest.SetsContentTypeForTxt" start time: Nov 22 03:31 UTC
 Output:
 ----------------------------------------------------------
 Running main() from /home/zav/Projects/http_cs/build/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -428,8 +428,8 @@ Note: Google Test filter = ServeStaticTest.SetsContentTypeForTxt
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"ServeStaticTest.SetsContentTypeForTxt" end time: Nov 21 05:40 UTC
+"ServeStaticTest.SetsContentTypeForTxt" end time: Nov 22 03:31 UTC
 "ServeStaticTest.SetsContentTypeForTxt" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Nov 21 05:40 UTC
+End testing: Nov 22 03:31 UTC

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zav/Projects/http_cs/server_main.cpp" "CMakeFiles/http_server_main.dir/server_main.cpp.o" "gcc" "CMakeFiles/http_server_main.dir/server_main.cpp.o.d"
+  "/home/zav/Projects/http_cs/src/server_main.cpp" "CMakeFiles/http_server_main.dir/src/server_main.cpp.o" "gcc" "CMakeFiles/http_server_main.dir/src/server_main.cpp.o.d"
   "" "http_server_main" "gcc" "CMakeFiles/http_server_main.dir/link.d"
   )
 

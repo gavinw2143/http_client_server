@@ -6,18 +6,38 @@
 #include <atomic>
 #include <chrono>
 #include "http_server.hpp"
+#include "net_tls.hpp"
 #include <csignal>
 
 
 namespace net_server {
 namespace {    
-    std::atomic_bool g_running{true};
+    struct PlainStream {
+        net::Socket socket;
 
-    extern "C" void handle_sigint(int) {
-        g_running.store(false, std::memory_order_relaxed);
-    }
+        std::size_t recv(void* buf, std::size_t len) {
+            return socket.recv(buf, len);
+        }
 
-    bool read_http_request(net::Socket& client,
+        void send_all(const void* buf, std::size_t len) {
+            socket.send_all(buf, len);
+        }
+    };
+
+    struct TlsStream {
+        net::TlsSocket socket;
+
+        std::size_t recv(void* buf, std::size_t len) {
+            return socket.recv(buf, len);
+        }
+
+        void send_all(const void* buf, std::size_t len) {
+            socket.send_all(buf, len);
+        }
+    };
+
+    template<typename Stream>
+    bool read_http_request(Stream& stream,
                            HttpRequest& out_req,
                            std::string& error)
     {
@@ -27,7 +47,7 @@ namespace {
 
         // read until we see \r\n\r\n or EOF
         for (;;) {
-            std::size_t n = client.recv(buf, sizeof(buf));
+            std::size_t n = stream.recv(buf, sizeof(buf));
             if (n == 0) {
                 break;
             }
@@ -78,7 +98,7 @@ namespace {
                 to_read = sizeof(buf);
             }
 
-            std::size_t n = client.recv(buf, to_read);
+            std::size_t n = stream.recv(buf, to_read);
             if (n == 0) {
                 error = "Client closed during body";
                 return false;
@@ -132,12 +152,9 @@ namespace {
             res.reason      = "Method Not Allowed";
             res.body        = "Only GET and POST supported\n";
         }
-
-        // Note: Content-Type gets set later (or inside serve_static).
     }
 
     void add_common_headers(HttpResponse& res) {
-        // Only add Content-Type if not already set (static files might have set it)
         bool has_ct = false;
         for (const auto& h : res.headers) {
             if (h.name == "Content-Type") {
@@ -179,15 +196,56 @@ namespace {
         log_line(oss.str());
     }
 
-    void send_http_response_and_log(net::Socket& client,
+    template<typename Stream>
+    void send_http_response_and_log(Stream& stream,
                                     const HttpRequest* req,
                                     const HttpResponse& res,
                                     std::string_view note = {})
     {
         std::string response_str = serialize_http_response(res);
-        client.send_all(response_str.data(), response_str.size());
+        stream.send_all(response_str.data(), response_str.size());
         log_http_access(req, res, note);
     }
+
+    template<typename Stream>
+    void handle_client_impl(Stream& stream) {
+        HttpRequest  req;
+        HttpResponse res;
+        std::string  error;
+
+        if (!read_http_request(stream, req, error)) {
+            res.status_code = 400;
+            res.reason      = "Bad Request";
+            res.body        = "Bad Request\n";
+            add_common_headers(res);
+            send_http_response_and_log(stream, nullptr, res, error);
+            return;
+        }
+
+        route_request(req, res);
+        add_common_headers(res);
+        send_http_response_and_log(stream, &req, res);
+    }
+
+    std::atomic_bool g_running{true};
+
+#ifndef _WIN32
+    int g_listener_fd = -1;
+
+    void handle_sigint(int) {
+        g_running.store(false, std::memory_order_relaxed);
+
+        // Wake up accept() by closing the listening socket's fd.
+        if (g_listener_fd != -1) {
+            ::close(g_listener_fd);
+            g_listener_fd = -1;
+        }
+    }
+#else
+    void handle_sigint(int) {
+        g_running.store(false, std::memory_order_relaxed);
+    }
+#endif
 }
 }
 
@@ -196,7 +254,14 @@ void net_server::run_http_server(uint16_t port) {
     listener.bind_v4_any(port);
     listener.listen();
 
+#ifndef _WIN32
+    g_listener_fd = listener.native_handle();
     std::signal(SIGINT, handle_sigint);
+#else
+    std::signal(SIGINT, handle_sigint);
+#endif
+
+    net::TlsContext tls_ctx("certs/server.crt", "certs/server.key");
 
     std::cout << "Listening on port " << port << "...\n";
 
@@ -217,41 +282,30 @@ void net_server::run_http_server(uint16_t port) {
 
         std::cout << "Accepted connection!\n";
 
-        // Spawn a thread to handle this client
         std::thread t(
-            [](net::Socket c) {
+            [&tls_ctx](net::Socket c) {
                 try {
-                    net_server::handle_client(std::move(c));
+                    net::TlsSocket tls_sock(tls_ctx, std::move(c));
+                    handle_client_tls(std::move(tls_sock));
                 } catch (const std::exception& ex) {
                     std::cerr << "[http] Client handler threw: " << ex.what() << "\n";
                 }
             },
-            std::move(client)   // move the socket into the thread
+            std::move(client)
         );
-
-        t.detach(); // we don’t join; thread cleans up itself when done
+        t.detach();
     }
+    std::cout << "[http] Server main loop exiting\n";
 }
 
 void net_server::handle_client(net::Socket client) {
-    HttpRequest  req;
-    HttpResponse res;
-    std::string  error;
+    PlainStream s{std::move(client)};
+    handle_client_impl(s);
+}
 
-    if (!read_http_request(client, req, error)) {
-        res.status_code = 400;
-        res.reason      = "Bad Request";
-        res.body        = "Bad Request\n";
-
-        add_common_headers(res);
-        send_http_response_and_log(client, nullptr, res, error);
-        return;
-    }
-
-    route_request(req, res);
-
-    add_common_headers(res);
-    send_http_response_and_log(client, &req, res);
+void net_server::handle_client_tls(net::TlsSocket client) {
+    TlsStream s{std::move(client)};
+    handle_client_impl(s);
 }
 
 

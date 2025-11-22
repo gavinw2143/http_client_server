@@ -116,6 +116,8 @@ http_tests: libhttp.a
 http_tests: lib/libgtest.a
 http_tests: lib/libgtest_main.a
 http_tests: libnet.a
+http_tests: /usr/lib/libssl.so
+http_tests: /usr/lib/libcrypto.so
 http_tests: lib/libgtest.a
 http_tests: CMakeFiles/http_tests.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable http_tests"

@@ -652,197 +652,221 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
-client_main.o: client_main.cpp.o
-.PHONY : client_main.o
+src/client_main.o: src/client_main.cpp.o
+.PHONY : src/client_main.o
 
 # target to build an object file
-client_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_client_main.dir/build.make CMakeFiles/http_client_main.dir/client_main.cpp.o
-.PHONY : client_main.cpp.o
+src/client_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_client_main.dir/build.make CMakeFiles/http_client_main.dir/src/client_main.cpp.o
+.PHONY : src/client_main.cpp.o
 
-client_main.i: client_main.cpp.i
-.PHONY : client_main.i
+src/client_main.i: src/client_main.cpp.i
+.PHONY : src/client_main.i
 
 # target to preprocess a source file
-client_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_client_main.dir/build.make CMakeFiles/http_client_main.dir/client_main.cpp.i
-.PHONY : client_main.cpp.i
+src/client_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_client_main.dir/build.make CMakeFiles/http_client_main.dir/src/client_main.cpp.i
+.PHONY : src/client_main.cpp.i
 
-client_main.s: client_main.cpp.s
-.PHONY : client_main.s
+src/client_main.s: src/client_main.cpp.s
+.PHONY : src/client_main.s
 
 # target to generate assembly for a file
-client_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_client_main.dir/build.make CMakeFiles/http_client_main.dir/client_main.cpp.s
-.PHONY : client_main.cpp.s
+src/client_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_client_main.dir/build.make CMakeFiles/http_client_main.dir/src/client_main.cpp.s
+.PHONY : src/client_main.cpp.s
 
-http_client.o: http_client.cpp.o
-.PHONY : http_client.o
+src/http_client.o: src/http_client.cpp.o
+.PHONY : src/http_client.o
 
 # target to build an object file
-http_client.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/http_client.cpp.o
-.PHONY : http_client.cpp.o
+src/http_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/http_client.cpp.o
+.PHONY : src/http_client.cpp.o
 
-http_client.i: http_client.cpp.i
-.PHONY : http_client.i
+src/http_client.i: src/http_client.cpp.i
+.PHONY : src/http_client.i
 
 # target to preprocess a source file
-http_client.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/http_client.cpp.i
-.PHONY : http_client.cpp.i
+src/http_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/http_client.cpp.i
+.PHONY : src/http_client.cpp.i
 
-http_client.s: http_client.cpp.s
-.PHONY : http_client.s
+src/http_client.s: src/http_client.cpp.s
+.PHONY : src/http_client.s
 
 # target to generate assembly for a file
-http_client.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/http_client.cpp.s
-.PHONY : http_client.cpp.s
+src/http_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/http_client.cpp.s
+.PHONY : src/http_client.cpp.s
 
-http_message.o: http_message.cpp.o
-.PHONY : http_message.o
+src/http_message.o: src/http_message.cpp.o
+.PHONY : src/http_message.o
 
 # target to build an object file
-http_message.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/http_message.cpp.o
-.PHONY : http_message.cpp.o
+src/http_message.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/http_message.cpp.o
+.PHONY : src/http_message.cpp.o
 
-http_message.i: http_message.cpp.i
-.PHONY : http_message.i
+src/http_message.i: src/http_message.cpp.i
+.PHONY : src/http_message.i
 
 # target to preprocess a source file
-http_message.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/http_message.cpp.i
-.PHONY : http_message.cpp.i
+src/http_message.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/http_message.cpp.i
+.PHONY : src/http_message.cpp.i
 
-http_message.s: http_message.cpp.s
-.PHONY : http_message.s
+src/http_message.s: src/http_message.cpp.s
+.PHONY : src/http_message.s
 
 # target to generate assembly for a file
-http_message.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/http_message.cpp.s
-.PHONY : http_message.cpp.s
+src/http_message.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/http_message.cpp.s
+.PHONY : src/http_message.cpp.s
 
-http_server.o: http_server.cpp.o
-.PHONY : http_server.o
+src/http_server.o: src/http_server.cpp.o
+.PHONY : src/http_server.o
 
 # target to build an object file
-http_server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/http_server.cpp.o
-.PHONY : http_server.cpp.o
+src/http_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/http_server.cpp.o
+.PHONY : src/http_server.cpp.o
 
-http_server.i: http_server.cpp.i
-.PHONY : http_server.i
+src/http_server.i: src/http_server.cpp.i
+.PHONY : src/http_server.i
 
 # target to preprocess a source file
-http_server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/http_server.cpp.i
-.PHONY : http_server.cpp.i
+src/http_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/http_server.cpp.i
+.PHONY : src/http_server.cpp.i
 
-http_server.s: http_server.cpp.s
-.PHONY : http_server.s
+src/http_server.s: src/http_server.cpp.s
+.PHONY : src/http_server.s
 
 # target to generate assembly for a file
-http_server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/http_server.cpp.s
-.PHONY : http_server.cpp.s
+src/http_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/http_server.cpp.s
+.PHONY : src/http_server.cpp.s
 
-net_connect.o: net_connect.cpp.o
-.PHONY : net_connect.o
+src/net_connect.o: src/net_connect.cpp.o
+.PHONY : src/net_connect.o
 
 # target to build an object file
-net_connect.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/net_connect.cpp.o
-.PHONY : net_connect.cpp.o
+src/net_connect.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/src/net_connect.cpp.o
+.PHONY : src/net_connect.cpp.o
 
-net_connect.i: net_connect.cpp.i
-.PHONY : net_connect.i
+src/net_connect.i: src/net_connect.cpp.i
+.PHONY : src/net_connect.i
 
 # target to preprocess a source file
-net_connect.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/net_connect.cpp.i
-.PHONY : net_connect.cpp.i
+src/net_connect.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/src/net_connect.cpp.i
+.PHONY : src/net_connect.cpp.i
 
-net_connect.s: net_connect.cpp.s
-.PHONY : net_connect.s
+src/net_connect.s: src/net_connect.cpp.s
+.PHONY : src/net_connect.s
 
 # target to generate assembly for a file
-net_connect.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/net_connect.cpp.s
-.PHONY : net_connect.cpp.s
+src/net_connect.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/src/net_connect.cpp.s
+.PHONY : src/net_connect.cpp.s
 
-net_platform.o: net_platform.cpp.o
-.PHONY : net_platform.o
+src/net_platform.o: src/net_platform.cpp.o
+.PHONY : src/net_platform.o
 
 # target to build an object file
-net_platform.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/net_platform.cpp.o
-.PHONY : net_platform.cpp.o
+src/net_platform.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/src/net_platform.cpp.o
+.PHONY : src/net_platform.cpp.o
 
-net_platform.i: net_platform.cpp.i
-.PHONY : net_platform.i
+src/net_platform.i: src/net_platform.cpp.i
+.PHONY : src/net_platform.i
 
 # target to preprocess a source file
-net_platform.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/net_platform.cpp.i
-.PHONY : net_platform.cpp.i
+src/net_platform.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/src/net_platform.cpp.i
+.PHONY : src/net_platform.cpp.i
 
-net_platform.s: net_platform.cpp.s
-.PHONY : net_platform.s
+src/net_platform.s: src/net_platform.cpp.s
+.PHONY : src/net_platform.s
 
 # target to generate assembly for a file
-net_platform.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/net_platform.cpp.s
-.PHONY : net_platform.cpp.s
+src/net_platform.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/src/net_platform.cpp.s
+.PHONY : src/net_platform.cpp.s
 
-server_main.o: server_main.cpp.o
-.PHONY : server_main.o
+src/net_tls.o: src/net_tls.cpp.o
+.PHONY : src/net_tls.o
 
 # target to build an object file
-server_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server_main.dir/build.make CMakeFiles/http_server_main.dir/server_main.cpp.o
-.PHONY : server_main.cpp.o
+src/net_tls.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/src/net_tls.cpp.o
+.PHONY : src/net_tls.cpp.o
 
-server_main.i: server_main.cpp.i
-.PHONY : server_main.i
+src/net_tls.i: src/net_tls.cpp.i
+.PHONY : src/net_tls.i
 
 # target to preprocess a source file
-server_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server_main.dir/build.make CMakeFiles/http_server_main.dir/server_main.cpp.i
-.PHONY : server_main.cpp.i
+src/net_tls.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/src/net_tls.cpp.i
+.PHONY : src/net_tls.cpp.i
 
-server_main.s: server_main.cpp.s
-.PHONY : server_main.s
+src/net_tls.s: src/net_tls.cpp.s
+.PHONY : src/net_tls.s
 
 # target to generate assembly for a file
-server_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server_main.dir/build.make CMakeFiles/http_server_main.dir/server_main.cpp.s
-.PHONY : server_main.cpp.s
+src/net_tls.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/src/net_tls.cpp.s
+.PHONY : src/net_tls.cpp.s
 
-socket.o: socket.cpp.o
-.PHONY : socket.o
+src/server_main.o: src/server_main.cpp.o
+.PHONY : src/server_main.o
 
 # target to build an object file
-socket.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/socket.cpp.o
-.PHONY : socket.cpp.o
+src/server_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server_main.dir/build.make CMakeFiles/http_server_main.dir/src/server_main.cpp.o
+.PHONY : src/server_main.cpp.o
 
-socket.i: socket.cpp.i
-.PHONY : socket.i
+src/server_main.i: src/server_main.cpp.i
+.PHONY : src/server_main.i
 
 # target to preprocess a source file
-socket.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/socket.cpp.i
-.PHONY : socket.cpp.i
+src/server_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server_main.dir/build.make CMakeFiles/http_server_main.dir/src/server_main.cpp.i
+.PHONY : src/server_main.cpp.i
 
-socket.s: socket.cpp.s
-.PHONY : socket.s
+src/server_main.s: src/server_main.cpp.s
+.PHONY : src/server_main.s
 
 # target to generate assembly for a file
-socket.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/socket.cpp.s
-.PHONY : socket.cpp.s
+src/server_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/http_server_main.dir/build.make CMakeFiles/http_server_main.dir/src/server_main.cpp.s
+.PHONY : src/server_main.cpp.s
+
+src/socket.o: src/socket.cpp.o
+.PHONY : src/socket.o
+
+# target to build an object file
+src/socket.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/src/socket.cpp.o
+.PHONY : src/socket.cpp.o
+
+src/socket.i: src/socket.cpp.i
+.PHONY : src/socket.i
+
+# target to preprocess a source file
+src/socket.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/src/socket.cpp.i
+.PHONY : src/socket.cpp.i
+
+src/socket.s: src/socket.cpp.s
+.PHONY : src/socket.s
+
+# target to generate assembly for a file
+src/socket.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/net.dir/build.make CMakeFiles/net.dir/src/socket.cpp.s
+.PHONY : src/socket.cpp.s
 
 tests/http_message_tests.o: tests/http_message_tests.cpp.o
 .PHONY : tests/http_message_tests.o
@@ -942,30 +966,33 @@ help:
 	@echo "... http_server_main"
 	@echo "... http_tests"
 	@echo "... net"
-	@echo "... client_main.o"
-	@echo "... client_main.i"
-	@echo "... client_main.s"
-	@echo "... http_client.o"
-	@echo "... http_client.i"
-	@echo "... http_client.s"
-	@echo "... http_message.o"
-	@echo "... http_message.i"
-	@echo "... http_message.s"
-	@echo "... http_server.o"
-	@echo "... http_server.i"
-	@echo "... http_server.s"
-	@echo "... net_connect.o"
-	@echo "... net_connect.i"
-	@echo "... net_connect.s"
-	@echo "... net_platform.o"
-	@echo "... net_platform.i"
-	@echo "... net_platform.s"
-	@echo "... server_main.o"
-	@echo "... server_main.i"
-	@echo "... server_main.s"
-	@echo "... socket.o"
-	@echo "... socket.i"
-	@echo "... socket.s"
+	@echo "... src/client_main.o"
+	@echo "... src/client_main.i"
+	@echo "... src/client_main.s"
+	@echo "... src/http_client.o"
+	@echo "... src/http_client.i"
+	@echo "... src/http_client.s"
+	@echo "... src/http_message.o"
+	@echo "... src/http_message.i"
+	@echo "... src/http_message.s"
+	@echo "... src/http_server.o"
+	@echo "... src/http_server.i"
+	@echo "... src/http_server.s"
+	@echo "... src/net_connect.o"
+	@echo "... src/net_connect.i"
+	@echo "... src/net_connect.s"
+	@echo "... src/net_platform.o"
+	@echo "... src/net_platform.i"
+	@echo "... src/net_platform.s"
+	@echo "... src/net_tls.o"
+	@echo "... src/net_tls.i"
+	@echo "... src/net_tls.s"
+	@echo "... src/server_main.o"
+	@echo "... src/server_main.i"
+	@echo "... src/server_main.s"
+	@echo "... src/socket.o"
+	@echo "... src/socket.i"
+	@echo "... src/socket.s"
 	@echo "... tests/http_message_tests.o"
 	@echo "... tests/http_message_tests.i"
 	@echo "... tests/http_message_tests.s"
