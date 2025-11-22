@@ -1,0 +1,382 @@
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <thread>
+#include <mutex>
+#include <atomic>
+#include <chrono>
+#include "http_server.hpp"
+#include "net_tls.hpp"
+#include <csignal>
+
+
+namespace net_server {
+namespace {    
+    struct PlainStream {
+        net::Socket socket;
+
+        std::size_t recv(void* buf, std::size_t len) {
+            return socket.recv(buf, len);
+        }
+
+        void send_all(const void* buf, std::size_t len) {
+            socket.send_all(buf, len);
+        }
+    };
+
+    struct TlsStream {
+        net::TlsSocket socket;
+
+        std::size_t recv(void* buf, std::size_t len) {
+            return socket.recv(buf, len);
+        }
+
+        void send_all(const void* buf, std::size_t len) {
+            socket.send_all(buf, len);
+        }
+    };
+
+    template<typename Stream>
+    bool read_http_request(Stream& stream,
+                           HttpRequest& out_req,
+                           std::string& error)
+    {
+        std::string raw;
+        char buf[4096];
+        std::size_t header_end = std::string::npos;
+
+        // read until we see \r\n\r\n or EOF
+        for (;;) {
+            std::size_t n = stream.recv(buf, sizeof(buf));
+            if (n == 0) {
+                break;
+            }
+            raw.append(buf, n);
+
+            auto pos = raw.find("\r\n\r\n");
+            if (pos != std::string::npos) {
+                header_end = pos + 4;
+                break;
+            }
+        }
+
+        if (header_end == std::string::npos) {
+            if (raw.empty()) {
+                // client connected and closed without sending anything
+                error = "Empty request";
+                return false;
+            }
+            error = "No header terminator";
+            return false;
+        }
+
+        // parse just the header part
+        std::string head = raw.substr(0, header_end);
+
+        if (!parse_http_request(head, out_req, &error)) {
+            return false;
+        }
+
+        // handle Content-Length body
+        std::size_t content_length = 0;
+        if (auto len_str = out_req.header_value("Content-Length")) {
+            try {
+                content_length = static_cast<std::size_t>(std::stoul(*len_str));
+            } catch (...) {
+                error = "Invalid Content-Length";
+                return false;
+            }
+        }
+
+        // seed body with whatever we already read after headers
+        out_req.body = raw.substr(header_end);
+        std::size_t received = out_req.body.size();
+
+        while (received < content_length) {
+            std::size_t to_read = content_length - received;
+            if (to_read > sizeof(buf)) {
+                to_read = sizeof(buf);
+            }
+
+            std::size_t n = stream.recv(buf, to_read);
+            if (n == 0) {
+                error = "Client closed during body";
+                return false;
+            }
+
+            out_req.body.append(buf, n);
+            received += n;
+        }
+
+        return true;
+    }
+
+    void route_request(const HttpRequest& req, HttpResponse& res) {
+        // Default response
+        res.status_code = 200;
+        res.reason      = "OK";
+        res.body.clear();
+        res.headers.clear();
+
+        if (req.method == "GET") {
+
+            if (req.target == "/hello") {
+                res.body = "Hello endpoint\n";
+            }
+            else if (req.target == "/slow") {
+                // optional: keep your test slow endpoint
+                std::this_thread::sleep_for(std::chrono::seconds(3));
+                res.body = "Slow endpoint\n";
+            }
+            else if (net_server::serve_static("./www", req, res)) {
+                // static handler already filled res (200 or 400)
+            }
+            else {
+                res.status_code = 404;
+                res.reason      = "Not Found";
+                res.body        = "404 Not Found\n";
+            }
+        }
+        else if (req.method == "POST") {
+
+            if (req.target == "/echo") {
+                res.body = "You POSTed:\n" + req.body + "\n";
+            } else {
+                res.status_code = 404;
+                res.reason      = "Not Found";
+                res.body        = "Unknown POST path\n";
+            }
+        }
+        else {
+            res.status_code = 405;
+            res.reason      = "Method Not Allowed";
+            res.body        = "Only GET and POST supported\n";
+        }
+    }
+
+    void add_common_headers(HttpResponse& res) {
+        bool has_ct = false;
+        for (const auto& h : res.headers) {
+            if (h.name == "Content-Type") {
+                has_ct = true;
+                break;
+            }
+        }
+        if (!has_ct) {
+            res.set_header("Content-Type", "text/plain");
+        }
+
+        res.set_header("Content-Length", std::to_string(res.body.size()));
+        res.set_header("Connection", "close");
+    }
+
+    std::mutex g_log_mutex;
+
+    void log_line(std::string_view text) {
+        std::lock_guard<std::mutex> lock(g_log_mutex);
+        std::cout << text << '\n';
+    }
+
+    void log_http_access(const HttpRequest* req,
+                         const HttpResponse& res,
+                         std::string_view note = {})
+    {
+        std::ostringstream oss;
+        if (req) {
+            oss << "[http] " << req->method << " " << req->target;
+        } else {
+            oss << "[http] (no-request)";
+        }
+
+        oss << " -> " << res.status_code << " " << res.reason;
+        if (!note.empty()) {
+            oss << " (" << note << ")";
+        }
+
+        log_line(oss.str());
+    }
+
+    template<typename Stream>
+    void send_http_response_and_log(Stream& stream,
+                                    const HttpRequest* req,
+                                    const HttpResponse& res,
+                                    std::string_view note = {})
+    {
+        std::string response_str = serialize_http_response(res);
+        stream.send_all(response_str.data(), response_str.size());
+        log_http_access(req, res, note);
+    }
+
+    template<typename Stream>
+    void handle_client_impl(Stream& stream) {
+        HttpRequest  req;
+        HttpResponse res;
+        std::string  error;
+
+        if (!read_http_request(stream, req, error)) {
+            res.status_code = 400;
+            res.reason      = "Bad Request";
+            res.body        = "Bad Request\n";
+            add_common_headers(res);
+            send_http_response_and_log(stream, nullptr, res, error);
+            return;
+        }
+
+        route_request(req, res);
+        add_common_headers(res);
+        send_http_response_and_log(stream, &req, res);
+    }
+
+    std::atomic_bool g_running{true};
+
+#ifndef _WIN32
+    int g_listener_fd = -1;
+
+    void handle_sigint(int) {
+        g_running.store(false, std::memory_order_relaxed);
+
+        // Wake up accept() by closing the listening socket's fd.
+        if (g_listener_fd != -1) {
+            ::close(g_listener_fd);
+            g_listener_fd = -1;
+        }
+    }
+#else
+    void handle_sigint(int) {
+        g_running.store(false, std::memory_order_relaxed);
+    }
+#endif
+}
+}
+
+void net_server::run_http_server(uint16_t port) {
+    net::Socket listener = net::Socket::tcp_v4();
+    listener.bind_v4_any(port);
+    listener.listen();
+
+#ifndef _WIN32
+    g_listener_fd = listener.native_handle();
+    std::signal(SIGINT, handle_sigint);
+#else
+    std::signal(SIGINT, handle_sigint);
+#endif
+
+    net::TlsContext tls_ctx("certs/server.crt", "certs/server.key");
+
+    std::cout << "Listening on port " << port << "...\n";
+
+    while (g_running.load(std::memory_order_relaxed)) {
+        std::cout << "Waiting for connection...\n";
+
+        net::Socket client;
+        try {
+            client = listener.accept();
+        } catch (const std::exception& ex) {
+            if (!g_running.load(std::memory_order_relaxed)) {
+                std::cout << "[http] accept interrupted, shutting down\n";
+                break;
+            }
+            std::cerr << "[http] accept error: " << ex.what() << "\n";
+            continue; 
+        }
+
+        std::cout << "Accepted connection!\n";
+
+        std::thread t(
+            [&tls_ctx](net::Socket c) {
+                try {
+                    net::TlsSocket tls_sock(tls_ctx, std::move(c));
+                    handle_client_tls(std::move(tls_sock));
+                } catch (const std::exception& ex) {
+                    std::cerr << "[http] Client handler threw: " << ex.what() << "\n";
+                }
+            },
+            std::move(client)
+        );
+        t.detach();
+    }
+    std::cout << "[http] Server main loop exiting\n";
+}
+
+void net_server::handle_client(net::Socket client) {
+    PlainStream s{std::move(client)};
+    handle_client_impl(s);
+}
+
+void net_server::handle_client_tls(net::TlsSocket client) {
+    TlsStream s{std::move(client)};
+    handle_client_impl(s);
+}
+
+
+bool net_server::serve_static(const std::string& doc_root,
+                  const HttpRequest& req,
+                  HttpResponse& res)
+{
+    if (req.method != "GET") {
+        return false;
+    }
+
+    std::string path = req.target;
+
+    // Normalize "/" -> "/index.html"
+    if (path == "/") {
+        path = "/index.html";
+    }
+
+    // Simple security: disallow ".."
+    if (path.find("..") != std::string::npos) {
+        res.status_code = 400;
+        res.reason = "Bad Request";
+        res.body = "Invalid path\n";
+        res.set_header("Content-Type", "text/plain");
+        return true; // we *did* handle it (with an error)
+    }
+
+    // Strip leading '/'
+    if (!path.empty() && path[0] == '/') {
+        path.erase(0, 1);
+    }
+
+    // Build filesystem path: doc_root + "/" + path
+    std::string fs_path = doc_root;
+    if (!fs_path.empty() && fs_path.back() != '/' && fs_path.back() != '\\') {
+        fs_path += '/';
+    }
+    fs_path += path;
+
+    // Try to open the file
+    std::ifstream file(fs_path, std::ios::binary);
+    if (!file) {
+        return false;  // let caller decide 404
+    }
+
+    // Read file to body
+    std::string body;
+    file.seekg(0, std::ios::end);
+    std::streampos size = file.tellg();
+    if (size > 0) {
+        body.resize(static_cast<std::size_t>(size));
+        file.seekg(0, std::ios::beg);
+        file.read(&body[0], size);
+    }
+
+    // Guess Content-Type from extension
+    std::string content_type = "application/octet-stream";
+    auto dot = path.find_last_of('.');
+    if (dot != std::string::npos) {
+        std::string ext = path.substr(dot + 1);
+        if (ext == "html" || ext == "htm") content_type = "text/html";
+        else if (ext == "txt")             content_type = "text/plain";
+        else if (ext == "css")             content_type = "text/css";
+        else if (ext == "js")              content_type = "application/javascript";
+        else if (ext == "json")            content_type = "application/json";
+    }
+
+    res.status_code = 200;
+    res.reason = "OK";
+    res.body = std::move(body);
+    res.set_header("Content-Type", content_type);
+
+    return true;
+}

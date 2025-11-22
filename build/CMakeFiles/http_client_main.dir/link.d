@@ -2,9 +2,11 @@ http_client_main: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o \
-  CMakeFiles/http_client_main.dir/client_main.cpp.o \
+  CMakeFiles/http_client_main.dir/src/client_main.cpp.o \
   libhttp.a \
   libnet.a \
+  /usr/lib/libssl.so \
+  /usr/lib/libcrypto.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
@@ -39,11 +41,15 @@ http_client_main: \
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o:
 
-CMakeFiles/http_client_main.dir/client_main.cpp.o:
+CMakeFiles/http_client_main.dir/src/client_main.cpp.o:
 
 libhttp.a:
 
 libnet.a:
+
+/usr/lib/libssl.so:
+
+/usr/lib/libcrypto.so:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so:
 

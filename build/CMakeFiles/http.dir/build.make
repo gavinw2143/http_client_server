@@ -72,60 +72,60 @@ include CMakeFiles/http.dir/flags.make
 CMakeFiles/http.dir/codegen:
 .PHONY : CMakeFiles/http.dir/codegen
 
-CMakeFiles/http.dir/http_message.cpp.o: CMakeFiles/http.dir/flags.make
-CMakeFiles/http.dir/http_message.cpp.o: /home/zav/Projects/http_cs/http_message.cpp
-CMakeFiles/http.dir/http_message.cpp.o: CMakeFiles/http.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/http.dir/http_message.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/http.dir/http_message.cpp.o -MF CMakeFiles/http.dir/http_message.cpp.o.d -o CMakeFiles/http.dir/http_message.cpp.o -c /home/zav/Projects/http_cs/http_message.cpp
+CMakeFiles/http.dir/src/http_message.cpp.o: CMakeFiles/http.dir/flags.make
+CMakeFiles/http.dir/src/http_message.cpp.o: /home/zav/Projects/http_cs/src/http_message.cpp
+CMakeFiles/http.dir/src/http_message.cpp.o: CMakeFiles/http.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/http.dir/src/http_message.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/http.dir/src/http_message.cpp.o -MF CMakeFiles/http.dir/src/http_message.cpp.o.d -o CMakeFiles/http.dir/src/http_message.cpp.o -c /home/zav/Projects/http_cs/src/http_message.cpp
 
-CMakeFiles/http.dir/http_message.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/http.dir/http_message.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/http_message.cpp > CMakeFiles/http.dir/http_message.cpp.i
+CMakeFiles/http.dir/src/http_message.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/http.dir/src/http_message.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/src/http_message.cpp > CMakeFiles/http.dir/src/http_message.cpp.i
 
-CMakeFiles/http.dir/http_message.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/http.dir/http_message.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/http_message.cpp -o CMakeFiles/http.dir/http_message.cpp.s
+CMakeFiles/http.dir/src/http_message.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/http.dir/src/http_message.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/src/http_message.cpp -o CMakeFiles/http.dir/src/http_message.cpp.s
 
-CMakeFiles/http.dir/http_client.cpp.o: CMakeFiles/http.dir/flags.make
-CMakeFiles/http.dir/http_client.cpp.o: /home/zav/Projects/http_cs/http_client.cpp
-CMakeFiles/http.dir/http_client.cpp.o: CMakeFiles/http.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/http.dir/http_client.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/http.dir/http_client.cpp.o -MF CMakeFiles/http.dir/http_client.cpp.o.d -o CMakeFiles/http.dir/http_client.cpp.o -c /home/zav/Projects/http_cs/http_client.cpp
+CMakeFiles/http.dir/src/http_client.cpp.o: CMakeFiles/http.dir/flags.make
+CMakeFiles/http.dir/src/http_client.cpp.o: /home/zav/Projects/http_cs/src/http_client.cpp
+CMakeFiles/http.dir/src/http_client.cpp.o: CMakeFiles/http.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/http.dir/src/http_client.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/http.dir/src/http_client.cpp.o -MF CMakeFiles/http.dir/src/http_client.cpp.o.d -o CMakeFiles/http.dir/src/http_client.cpp.o -c /home/zav/Projects/http_cs/src/http_client.cpp
 
-CMakeFiles/http.dir/http_client.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/http.dir/http_client.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/http_client.cpp > CMakeFiles/http.dir/http_client.cpp.i
+CMakeFiles/http.dir/src/http_client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/http.dir/src/http_client.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/src/http_client.cpp > CMakeFiles/http.dir/src/http_client.cpp.i
 
-CMakeFiles/http.dir/http_client.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/http.dir/http_client.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/http_client.cpp -o CMakeFiles/http.dir/http_client.cpp.s
+CMakeFiles/http.dir/src/http_client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/http.dir/src/http_client.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/src/http_client.cpp -o CMakeFiles/http.dir/src/http_client.cpp.s
 
-CMakeFiles/http.dir/http_server.cpp.o: CMakeFiles/http.dir/flags.make
-CMakeFiles/http.dir/http_server.cpp.o: /home/zav/Projects/http_cs/http_server.cpp
-CMakeFiles/http.dir/http_server.cpp.o: CMakeFiles/http.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/http.dir/http_server.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/http.dir/http_server.cpp.o -MF CMakeFiles/http.dir/http_server.cpp.o.d -o CMakeFiles/http.dir/http_server.cpp.o -c /home/zav/Projects/http_cs/http_server.cpp
+CMakeFiles/http.dir/src/http_server.cpp.o: CMakeFiles/http.dir/flags.make
+CMakeFiles/http.dir/src/http_server.cpp.o: /home/zav/Projects/http_cs/src/http_server.cpp
+CMakeFiles/http.dir/src/http_server.cpp.o: CMakeFiles/http.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/http.dir/src/http_server.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/http.dir/src/http_server.cpp.o -MF CMakeFiles/http.dir/src/http_server.cpp.o.d -o CMakeFiles/http.dir/src/http_server.cpp.o -c /home/zav/Projects/http_cs/src/http_server.cpp
 
-CMakeFiles/http.dir/http_server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/http.dir/http_server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/http_server.cpp > CMakeFiles/http.dir/http_server.cpp.i
+CMakeFiles/http.dir/src/http_server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/http.dir/src/http_server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zav/Projects/http_cs/src/http_server.cpp > CMakeFiles/http.dir/src/http_server.cpp.i
 
-CMakeFiles/http.dir/http_server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/http.dir/http_server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/http_server.cpp -o CMakeFiles/http.dir/http_server.cpp.s
+CMakeFiles/http.dir/src/http_server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/http.dir/src/http_server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zav/Projects/http_cs/src/http_server.cpp -o CMakeFiles/http.dir/src/http_server.cpp.s
 
 # Object files for target http
 http_OBJECTS = \
-"CMakeFiles/http.dir/http_message.cpp.o" \
-"CMakeFiles/http.dir/http_client.cpp.o" \
-"CMakeFiles/http.dir/http_server.cpp.o"
+"CMakeFiles/http.dir/src/http_message.cpp.o" \
+"CMakeFiles/http.dir/src/http_client.cpp.o" \
+"CMakeFiles/http.dir/src/http_server.cpp.o"
 
 # External object files for target http
 http_EXTERNAL_OBJECTS =
 
-libhttp.a: CMakeFiles/http.dir/http_message.cpp.o
-libhttp.a: CMakeFiles/http.dir/http_client.cpp.o
-libhttp.a: CMakeFiles/http.dir/http_server.cpp.o
+libhttp.a: CMakeFiles/http.dir/src/http_message.cpp.o
+libhttp.a: CMakeFiles/http.dir/src/http_client.cpp.o
+libhttp.a: CMakeFiles/http.dir/src/http_server.cpp.o
 libhttp.a: CMakeFiles/http.dir/build.make
 libhttp.a: CMakeFiles/http.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zav/Projects/http_cs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libhttp.a"

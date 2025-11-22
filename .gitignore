@@ -1,0 +1,17 @@
+/build/
+/cmake-build-*/
+/CMakeFiles/
+/CMakeCache.txt
+
+*.user
+*.swp
+*.swo
+.vscode/
+.idea/
+
+/certs/*
+!/certs/README.md
+
+http_server_main
+http_client_main
+http_tests

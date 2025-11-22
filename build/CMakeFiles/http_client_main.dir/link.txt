@@ -1,1 +1,1 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/http_client_main.dir/link.d CMakeFiles/http_client_main.dir/client_main.cpp.o -o http_client_main  libhttp.a libnet.a
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/http_client_main.dir/link.d CMakeFiles/http_client_main.dir/src/client_main.cpp.o -o http_client_main  libhttp.a libnet.a /usr/lib/libssl.so /usr/lib/libcrypto.so

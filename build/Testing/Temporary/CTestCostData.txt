@@ -1,0 +1,17 @@
+HttpMessageTest.ParseSimpleGetRequest 1 0.00248494
+HttpMessageTest.ParseSimpleOkResponse 1 0.00213984
+HttpMessageTest.ResponseSetHeaderOverwrites 1 0.00214749
+HttpMessageTest.RejectsRequestWithNoCRLF 1 0.00213973
+HttpMessageTest.RejectsRequestWithMissingSecondSpace 1 0.00241966
+HttpMessageTest.RejectsResponseWithNoCRLF 1 0.00231082
+HttpMessageTest.RejectsResponseWithNonNumericStatusCode 1 0.00246872
+HttpMessageTest.HeaderValueLookupIsNameExactMatch 1 0.00248661
+HttpMessageTest.RejectsResponseWithNoBlankLineAfterHeaders 1 0.00266149
+HttpMessageTest.RejectsRequestWithTooLargeHeaders 1 0.00346048
+ServeStaticTest.ServesIndexForRootPath 1 0.00293117
+ServeStaticTest.ServesArbitraryFileUnderDocRoot 1 0.00290386
+ServeStaticTest.RejectsPathTraversalOutsideDocRoot 1 0.00286063
+ServeStaticTest.ReturnsFalseForNonGetMethods 1 0.00291536
+ServeStaticTest.SetsContentTypeForHtml 1 0.00290313
+ServeStaticTest.SetsContentTypeForTxt 1 0.00291911
+---
